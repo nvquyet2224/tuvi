@@ -4,36 +4,36 @@
     position: relative;
     background-color: var(--global-color);
     color: #ffffff;
-    padding: f.rem(80) 0 0 0;
+    padding: f.rem(50) f.rem(20);
     overflow: hidden;
 
-    // Background shapes using the provided shap.svg
-    &_bg-shape-1 {
+    .shape_bg {
         position: absolute;
-        bottom: f.rem(-160);
-        left: f.rem(100);
-        width: f.rem(450);
-        height: f.rem(450);
-        background-image: url('../images/shap.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
+        width: f.rem(364);
+        height: f.rem(364);
+        background: url(../images/shape.svg) no-repeat center center;
+        background-size: 100% auto;
+        z-index: 0;
+        transform-origin: center;
+        will-change: transform;
         pointer-events: none;
-        z-index: 1;
+        opacity: 0.4;
+
+        &-one {
+            left: f.rem(247);
+            bottom: f.rem(10);
+            -webkit-animation: floatFooterBlobOne 22s infinite ease-in-out;
+            animation: floatFooterBlobOne 22s infinite ease-in-out;
+        }
+
+        &-two {
+            top: f.rem(38);
+            right: f.rem(270);
+            -webkit-animation: floatFooterBlobTwo 26s infinite ease-in-out;
+            animation: floatFooterBlobTwo 26s infinite ease-in-out;
+        }
     }
 
-    &_bg-shape-2 {
-        position: absolute;
-        top: f.rem(-100);
-        right: f.rem(250);
-        width: f.rem(480);
-        height: f.rem(480);
-        background-image: url('../images/shap.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        pointer-events: none;
-        z-index: 1;
-        transform: rotate(180deg);
-    }
 
     .container {
         position: relative;
@@ -43,8 +43,7 @@
     &_top {
         display: grid;
         grid-template-columns: 2.2fr 1fr 1fr;
-        gap: f.rem(60);
-        padding-bottom: f.rem(60);
+        gap: f.rem(40);
     }
 
     &_col {
@@ -55,42 +54,37 @@
 
     &_logo {
         display: inline-block;
-        margin-bottom: f.rem(20);
-        transition: transform 0.3s ease;
+        line-height: 0;
+        width: f.rem(100);
+        height: auto;
+        margin-bottom: f.rem(10);
 
-        &:hover {
-            transform: scale(1.05);
-        }
-
-        .white-logo {
-            filter: brightness(0) invert(1);
+        img {
+            width: 100%;
+            height: auto;
         }
     }
 
     &_brand-title {
-        font-size: f.rem(18);
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0 0 f.rem(15) 0;
-        letter-spacing: -0.01em;
+        font-size: f.rem(24);
+        font-weight: 900;
+        margin-bottom: f.rem(22);
     }
 
     &_brand-desc {
-        font-size: f.rem(13);
-        line-height: 1.65;
-        color: rgba(255, 255, 255, 0.8);
-        margin: 0;
-        max-width: f.rem(420);
+        font-size: f.rem(16);
+        line-height: 1.5;
+        color: #fff;
+        max-width: f.rem(328);
         font-weight: 400;
     }
 
     &_title {
-        font-size: f.rem(13);
-        font-weight: 700;
-        color: rgba(255, 255, 255, 0.7);
+        font-size: f.rem(18);
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.6);
         text-transform: uppercase;
-        margin: 0 0 f.rem(20) 0;
-        letter-spacing: 0.08em;
+        margin-bottom: f.rem(24);
     }
 
     &_menu {
@@ -99,7 +93,7 @@
         margin: 0;
 
         li {
-            margin-bottom: f.rem(12);
+            margin-bottom: f.rem(24);
 
             &:last-child {
                 margin-bottom: 0;
@@ -107,20 +101,15 @@
         }
 
         a {
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
-            font-size: f.rem(14);
+            font-size: f.rem(16);
             font-weight: 600;
-            transition: opacity 0.25s ease;
-
-            &:hover {
-                opacity: 0.75;
-            }
         }
     }
 
     &_contact-item {
-        margin-bottom: f.rem(28);
+        margin-bottom: f.rem(50);
 
         &:last-of-type {
             margin-bottom: 0;
@@ -128,54 +117,49 @@
     }
 
     &_contact-link {
-        color: #ffffff;
+        color: #fff;
         text-decoration: none;
-        font-size: f.rem(14);
-        font-weight: 700;
-        transition: opacity 0.25s ease;
-
-        &:hover {
-            opacity: 0.75;
-        }
+        font-size: f.rem(16);
+        font-weight: 600;
     }
 
     &_socials {
         display: flex;
-        gap: f.rem(12);
-        margin-top: f.rem(10);
+        gap: f.rem(20);
     }
 
     &_social-icon {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: f.rem(36);
-        height: f.rem(36);
+        width: f.rem(48);
+        height: f.rem(48);
+        -webkit-border-radius: 50%;
         border-radius: 50%;
         border: 1px solid rgba(255, 255, 255, 0.4);
         transition: all 0.3s ease;
 
         img {
-            width: f.rem(18);
-            height: f.rem(18);
+            width: f.rem(24);
+            height: f.rem(24);
+            -webkit-filter: brightness(0) invert(1);
             filter: brightness(0) invert(1);
             transition: all 0.3s ease;
         }
 
         &:hover {
-            background-color: #ffffff;
-            border-color: #ffffff;
+            background-color: #fff;
+            border-color: #fff;
 
             img {
-                // Change to the brand red color on hover
+                -webkit-filter: invert(27%) sepia(82%) saturate(1915%) hue-rotate(338deg) brightness(85%) contrast(89%);
                 filter: invert(27%) sepia(82%) saturate(1915%) hue-rotate(338deg) brightness(85%) contrast(89%);
             }
         }
     }
 
     &_bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        padding: f.rem(30) 0;
+        padding-top: f.rem(180);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -188,57 +172,48 @@
         gap: f.rem(24);
 
         a {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 1);
             text-decoration: none;
-            font-size: f.rem(12);
+            font-size: f.rem(16);
             font-weight: 600;
-            transition: color 0.25s ease;
-
-            &:hover {
-                color: #ffffff;
-            }
         }
     }
 
     &_copyright {
-        font-size: f.rem(11);
+        font-size: f.rem(14);
         color: rgba(255, 255, 255, 0.6);
-        margin: 0;
-        font-weight: 500;
+        font-weight: 400;
     }
 }
 
 // Responsive Styles
 @media screen and (max-width: 1023px) {
     .footer {
-        padding: f.rem(50) 0 0 0;
+        padding: f.rem(70) f.rem(12);
 
-        &_bg-shape-1 {
-            bottom: f.rem(-100);
-            left: f.rem(-50);
-            width: f.rem(300);
-            height: f.rem(300);
+        .shape_bg {
+            width: f.rem(180);
+            height: f.rem(180);
+
+            &-one {
+                left: f.rem(60);
+                bottom: f.rem(10);
+            }
+
+            &-two {
+                top: f.rem(80);
+                right: f.rem(100);
+            }
         }
 
-        &_bg-shape-2 {
-            top: f.rem(-50);
-            right: f.rem(-100);
-            width: f.rem(320);
-            height: f.rem(320);
-        }
 
         &_top {
             display: flex;
             flex-direction: column;
-            gap: f.rem(40);
-            align-items: center;
-            text-align: center;
-            padding-bottom: f.rem(45);
+            gap: 0;
         }
 
         &_col {
-            align-items: center;
-
             &-brand {
                 max-width: 100%;
             }
@@ -250,27 +225,166 @@
 
         &_brand-desc {
             max-width: 100%;
+            margin-bottom: f.rem(64);
         }
 
         &_title {
-            margin-bottom: f.rem(14);
+            font-size: f.rem(16);
+            margin-bottom: f.rem(12);
         }
 
+
+        &_menu {
+            width: 100%;
+            padding-bottom: f.rem(32);
+            margin-bottom: f.rem(32);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+            li {
+                margin-bottom: f.rem(12);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            a {
+                font-size: f.rem(14);
+            }
+        }
+
+
+        &_contact-item {
+            width: 100%;
+            margin-bottom: f.rem(24);
+        }
+
+
         &_socials {
-            justify-content: center;
+            width: 100%;
+            padding-bottom: f.rem(32);
+            margin-bottom: f.rem(32);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         &_bottom {
-            flex-direction: column-reverse;
-            gap: f.rem(20);
-            text-align: center;
-            padding: f.rem(25) 0;
+            padding: 0;
+            flex-wrap: wrap;
         }
 
         &_policies {
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: f.rem(15);
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(16);
+            margin-bottom: f.rem(24);
+
+            a {
+
+                font-size: f.rem(14);
+            }
         }
+
+        &_copyright {
+            font-size: f.rem(14);
+        }
+    }
+}
+
+// Beautiful footer background shape floating animations
+@-webkit-keyframes floatFooterBlobOne {
+    0% {
+        -webkit-transform: translate(0, 0) rotate(0deg) scale(1);
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    25% {
+        -webkit-transform: translate(f.rem(25), f.rem(10)) rotate(90deg) scale(1.06);
+        transform: translate(f.rem(25), f.rem(10)) rotate(90deg) scale(1.06);
+    }
+
+    50% {
+        -webkit-transform: translate(f.rem(10), f.rem(25)) rotate(180deg) scale(0.94);
+        transform: translate(f.rem(10), f.rem(25)) rotate(180deg) scale(0.94);
+    }
+
+    75% {
+        -webkit-transform: translate(f.rem(-15), f.rem(15)) rotate(270deg) scale(1.04);
+        transform: translate(f.rem(-15), f.rem(15)) rotate(270deg) scale(1.04);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0) rotate(360deg) scale(1);
+        transform: translate(0, 0) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes floatFooterBlobOne {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: translate(f.rem(25), f.rem(10)) rotate(90deg) scale(1.06);
+    }
+
+    50% {
+        transform: translate(f.rem(10), f.rem(25)) rotate(180deg) scale(0.94);
+    }
+
+    75% {
+        transform: translate(f.rem(-15), f.rem(15)) rotate(270deg) scale(1.04);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg) scale(1);
+    }
+}
+
+@-webkit-keyframes floatFooterBlobTwo {
+    0% {
+        -webkit-transform: translate(0, 0) rotate(0deg) scale(1);
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    25% {
+        -webkit-transform: translate(f.rem(-30), f.rem(-10)) rotate(-90deg) scale(0.94);
+        transform: translate(f.rem(-30), f.rem(-10)) rotate(-90deg) scale(0.94);
+    }
+
+    50% {
+        -webkit-transform: translate(f.rem(-10), f.rem(-25)) rotate(-180deg) scale(1.06);
+        transform: translate(f.rem(-10), f.rem(-25)) rotate(-180deg) scale(1.06);
+    }
+
+    75% {
+        -webkit-transform: translate(f.rem(15), f.rem(-15)) rotate(-270deg) scale(0.97);
+        transform: translate(f.rem(15), f.rem(-15)) rotate(-270deg) scale(0.97);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0) rotate(-360deg) scale(1);
+        transform: translate(0, 0) rotate(-360deg) scale(1);
+    }
+}
+
+@keyframes floatFooterBlobTwo {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: translate(f.rem(-30), f.rem(-10)) rotate(-90deg) scale(0.94);
+    }
+
+    50% {
+        transform: translate(f.rem(-10), f.rem(-25)) rotate(-180deg) scale(1.06);
+    }
+
+    75% {
+        transform: translate(f.rem(15), f.rem(-15)) rotate(-270deg) scale(0.97);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(-360deg) scale(1);
     }
 }

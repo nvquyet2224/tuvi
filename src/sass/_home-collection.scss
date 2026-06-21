@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 1023px) {
   .home-collection {
-    padding: f.rem(50) f.rem(11);
+    padding: f.rem(70) f.rem(12);
 
     &_wrap {
       grid-template-columns: 1fr;
@@ -34,7 +34,7 @@
 
     &_grid {
       padding: 0 !important;
-      gap: f.rem(8);
+      gap: f.rem(24) f.rem(8);
     }
   }
 }

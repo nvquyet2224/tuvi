@@ -287,31 +287,28 @@
 
     &_header {
         position: absolute;
-        top: f.rem(42);
-        left: 50%;
-        transform: translateX(-50%);
+        top: f.rem(50);
+        left: f.rem(210);
         z-index: 10;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
         gap: f.rem(20);
     }
 
     &_title {
         font-size: f.rem(32);
-        font-weight: 700;
+        font-weight: 900;
         color: #ffffff;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        text-align: center;
+        margin-bottom: f.rem(20);
+
     }
 
     &_tabs {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        gap: f.rem(10);
+        gap: f.rem(8);
     }
 
     &_tab--item {
@@ -320,11 +317,12 @@
         gap: f.rem(8);
         padding: f.rem(8) f.rem(18);
         background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 1);
         -webkit-border-radius: f.rem(20);
         border-radius: f.rem(20);
         cursor: pointer;
         color: #ffffff;
+        -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
 
         &:hover {
@@ -340,13 +338,13 @@
     }
 
     &_tab--icon {
-        width: f.rem(16);
-        height: f.rem(16);
+        width: f.rem(20);
+        height: f.rem(20);
         display: flex;
         align-items: center;
         justify-content: center;
         color: inherit;
-        
+
         svg {
             width: 100%;
             height: 100%;
@@ -355,8 +353,8 @@
     }
 
     &_tab--text {
-        font-size: f.rem(12);
-        font-weight: 500;
+        font-size: f.rem(16);
+        font-weight: 400;
         color: inherit;
         white-space: nowrap;
     }
@@ -368,31 +366,20 @@
 
 @media screen and (max-width:1023px) {
     .look {
-        background-color: #f6f6f6;
-        padding: f.rem(66) f.rem(15);
 
         &_header {
             position: relative;
             top: auto;
             left: auto;
-            transform: none;
             width: 100%;
-            background-color: #ffffff;
-            padding: f.rem(20) 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: f.rem(16);
-            margin-bottom: f.rem(20);
-            border-top: 1px solid #eeeeee;
+            padding-top: f.rem(32);
+            margin-bottom: f.rem(16);
+            border-top: 1px solid #D3D3D3;
         }
 
         &_title {
-            font-size: f.rem(20);
-            font-weight: 700;
+            font-size: f.rem(24);
             color: var(--global-color);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         &_tabs {
@@ -400,16 +387,16 @@
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
-            gap: f.rem(8);
             width: 100%;
             overflow-x: auto;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
-            padding: 0 f.rem(15);
+            padding: 0 f.rem(12);
+
             &::-webkit-scrollbar {
                 display: none;
             }
-            
+
             @media screen and (min-width: 600px) {
                 justify-content: center;
                 padding: 0;
@@ -418,14 +405,14 @@
 
         &_tab--item {
             background: #ffffff;
-            border: 1px solid #d0d5dd;
-            color: #344054;
-            
+            border: 1px solid rgba(0, 0, 0, 0.17);
+            color: #000;
+
             &:hover {
-                background: #f9fafb;
-                border-color: #d0d5dd;
+                background: #fff;
+                border-color: rgba(0, 0, 0, 0.17);
             }
-            
+
             &.current {
                 background: var(--global-color);
                 border-color: var(--global-color);
@@ -445,13 +432,16 @@
             position: relative;
 
             &--item {
-                aspect-ratio: 343/384;
+                aspect-ratio: auto;
+                line-height: 0;
 
                 img {
                     width: 100%;
-                    height: 100%;
-                    -webkit-object-fit: cover;
-                    object-fit: cover;
+                    height: auto;
+                    // width: 100%;
+                    // height: 100%;
+                    // -webkit-object-fit: cover;
+                    // object-fit: cover;
                 }
             }
 
@@ -459,8 +449,8 @@
 
         &_pot {
             &--item {
-                width: f.rem(16);
-                height: f.rem(16);
+                width: f.rem(20);
+                height: f.rem(20);
 
                 .pot-but {
                     svg {

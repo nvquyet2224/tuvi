@@ -20,6 +20,7 @@ const home_collection = fs.readFileSync(__dirname + "/src/_home-collection.html"
 const home_bestseller = fs.readFileSync(__dirname + "/src/_home-bestseller.html");
 const home_why = fs.readFileSync(__dirname + "/src/_home-why.html");
 const home_purpose = fs.readFileSync(__dirname + "/src/_home-purpose.html");
+const home_ethos = fs.readFileSync(__dirname + "/src/_home-ethos.html");
 
 const home_look = fs.readFileSync(__dirname + "/src/_home-look.html");
 const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
@@ -53,6 +54,7 @@ module.exports = {
     cmp_home_bestseller: ["./src/js/home-bestseller.js"],
     cmp_home_why: ["./src/js/home-why.js"],
     cmp_home_purpose: ["./src/js/home-purpose.js"],
+    cmp_home_ethos: ["./src/js/home-ethos.js"],
     cmp_home_look: ["./src/js/home-look.js"],
     cmp_home_promotion: ["./src/js/home-promotion.js"],
     cmp_footer: ["./src/js/footer.js"],
@@ -174,6 +176,7 @@ module.exports = {
       home_bestseller: home_bestseller,
       home_why: home_why,
       home_purpose: home_purpose,
+      home_ethos: home_ethos,
       home_look: home_look,
       home_promotion: home_promotion,
       footer: footer,

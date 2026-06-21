@@ -73,8 +73,10 @@
         }
 
         h1 {
-            color: #fff;
             margin-bottom: f.rem(218);
+            color: #fff;
+            text-transform: uppercase;
+
         }
 
     }
@@ -89,30 +91,21 @@
     .banner {
         width: 100%;
 
-        &_wrap {
-            &::before {
-                padding-top: 206.666666667%;
-            }
-        }
-
         &_content {
-            padding-left: f.rem(15);
-            padding-right: f.rem(15);
-            padding-bottom: f.rem(38);
+            align-items: flex-end;
+            padding: f.rem(40) f.rem(12);
         }
 
         &_detail {
-            .sub-title {
-                font-size: f.rem(14);
-                line-height: 1.6;
+            h1 {
+                margin-bottom: f.rem(17);
             }
 
-            .sub-title,
-            h1 {
-                margin-bottom: f.rem(18);
+            .brief {
+                font-size: f.rem(16);
+                margin-bottom: f.rem(32);
             }
         }
-
 
     }
 

@@ -1,0 +1,169 @@
+@use "function" as f;
+
+.home-ethos {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 900;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+
+    &_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            -webkit-transition: transform 10s ease;
+            transition: transform 10s ease;
+        }
+    }
+
+    &_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.4) 100%);
+        z-index: 2;
+    }
+
+    &_container {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: f.rem(144);
+        width: 100%;
+        height: 100%;
+        max-width: f.rem(1200);
+        padding: 0 f.rem(40);
+        margin: 0 auto;
+    }
+
+    &_text {
+        font-family: "Montserrat", sans-serif;
+        font-size: f.rem(24);
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.85);
+        text-transform: uppercase;
+        letter-spacing: f.rem(4);
+        pointer-events: auto;
+        cursor: default;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+
+        span {
+            display: inline-block;
+        }
+
+        &:hover {
+            color: #ffffff;
+            text-shadow: 0 0 f.rem(15) rgba(255, 255, 255, 0.6);
+        }
+
+        &-left {
+            transform-origin: right center;
+            &:hover {
+                -webkit-transform: translateX(f.rem(-10)) scale(1.05);
+                transform: translateX(f.rem(-10)) scale(1.05);
+            }
+        }
+
+        &-right {
+            transform-origin: left center;
+            &:hover {
+                -webkit-transform: translateX(f.rem(10)) scale(1.05);
+                transform: translateX(f.rem(10)) scale(1.05);
+            }
+        }
+    }
+
+    &_card {
+        width: f.rem(383);
+        aspect-ratio: 383 / 575;
+        position: relative;
+        z-index: 4;
+        box-shadow: 0 f.rem(20) f.rem(50) rgba(0, 0, 0, 0.6);
+        overflow: hidden;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        will-change: transform;
+        -webkit-transition: transform 0.15s ease-out, box-shadow 0.6s, border-color 0.6s;
+        transition: transform 0.15s ease-out, box-shadow 0.6s, border-color 0.6s;
+
+        &-inner {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                -webkit-transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+                transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            }
+        }
+
+        &:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 f.rem(30) f.rem(60) rgba(0, 0, 0, 0.8);
+        }
+    }
+
+    // Gentle slow parallax effect on background hover
+    &:hover &_bg img {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+}
+
+// Responsive Styles
+@media screen and (max-width: 1023px) {
+    .home-ethos {
+        height: auto;
+        aspect-ratio: 375 / 750;
+        padding: 0;
+
+        &_container {
+            flex-direction: column;
+            gap: f.rem(60);
+            padding: 0 f.rem(20);
+            text-align: center;
+            justify-content: center;
+        }
+
+        &_text {
+            position: static;
+            -webkit-transform: none;
+            transform: none;
+            font-size: f.rem(20);
+            letter-spacing: f.rem(2);
+
+            &-left:hover,
+            &-right:hover {
+                -webkit-transform: scale(1.05);
+                transform: scale(1.05);
+            }
+        }
+
+        &_card {
+            width: f.rem(230);
+            aspect-ratio: 230 / 340;
+            margin: 0 auto;
+        }
+    }
+}

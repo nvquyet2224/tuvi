@@ -140,7 +140,7 @@ function homeWhySlider() {
             watchOverflow: true,
             initialSlide: 0,
             pagination: {
-                el: '.homeWhySlider .swiper-pagination',
+                el: '.home-why_wrap .swiper-pagination',
                 clickable: true
             },
             mousewheel: {
@@ -174,16 +174,45 @@ function homePurposeSlider() {
             breakpoints: {
                 320: {
                     slidesPerView: 1,
-                    spaceBetween: 16
+                    spaceBetween: 12
                 },
                 1024: {
                     slidesPerView: 2,
-                    spaceBetween: 32,
+                    spaceBetween: 20,
                     allowTouchMove: false
                 }
             }
         });
     }
+}
+
+function homeEthosTilt() {
+    var section = document.querySelector(".home-ethos");
+    if (!section) return;
+
+    var card = section.querySelector(".home-ethos_card");
+    if (!card) return;
+
+    var maxTilt = 15;
+    var maxScale = 1.08;
+
+    section.addEventListener("mousemove", function(e) {
+        var rect = section.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        var ry = x * maxTilt;
+        var rx = y * -maxTilt;
+        // Distance from center (0 = center, ~0.7 = corner)
+        var dist = Math.sqrt(x * x + y * y);
+        // Scale: closer to center = bigger, max at center
+        var scale = maxScale - dist * (maxScale - 1) * 2;
+        if (scale < 1) scale = 1;
+        card.style.transform = "perspective(800px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) scale(" + scale.toFixed(3) + ")";
+    });
+
+    section.addEventListener("mouseleave", function() {
+        card.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)";
+    });
 }
 
 (function () {
@@ -192,4 +221,5 @@ function homePurposeSlider() {
     homeBestsellerSlider();
     homeWhySlider();
     homePurposeSlider();
+    homeEthosTilt();
 })();

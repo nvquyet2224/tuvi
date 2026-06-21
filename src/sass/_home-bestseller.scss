@@ -1,8 +1,7 @@
 @use "function" as f;
 
 .home-bestseller {
-    background-color: #ffffff;
-    padding: f.rem(80) 0;
+    padding: f.rem(100) f.rem(20);
     overflow: hidden;
 
     &_wrap {
@@ -15,7 +14,7 @@
         bottom: 0;
         left: 0;
         z-index: 5;
-        width: calc((100% - f.rem(80)) / 3); // exactly matches column 1 width
+        width: calc((100% - f.rem(80)) / 3);
         display: flex;
         flex-direction: column;
         gap: f.rem(12);
@@ -50,6 +49,7 @@
 
         &:hover {
             color: var(--global-color);
+
             svg {
                 transform: translateX(4px);
             }
@@ -62,7 +62,6 @@
 
         .swiper {
             width: 100%;
-            padding-bottom: f.rem(24);
         }
 
         .swiper-scrollbar {
@@ -70,6 +69,8 @@
             height: 2px;
             background: #f2f4f7;
             border-radius: 0;
+            width: 100%;
+            left: 0;
 
             .swiper-scrollbar-drag {
                 background: #344054;
@@ -79,20 +80,31 @@
     }
 
     &_slide-inner {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: f.rem(40);
+        display: flex;
         width: 100%;
 
         .product {
+
             &:nth-child(1),
             &:nth-child(2) {
-                margin-bottom: f.rem(120); // space for absolute header
+                flex: 0 0 24.5%;
+                max-width: 24.5%;
+            }
+
+            &:nth-child(1) {
+                margin-right: auto;
+            }
+
+            &:nth-child(2) {
+                margin-right: f.rem(20);
             }
 
             &:nth-child(3) {
+                flex: 0 0 32.428571429%;
+                max-width: 32.428571429%;
+
                 .product-img {
-                    aspect-ratio: 335/490;
+                    aspect-ratio: 454/668;
                 }
             }
         }
@@ -100,8 +112,8 @@
 
     &_drag {
         position: absolute;
-        top: f.rem(163); // vertically centered on product 1 and 2 image
-        left: calc((100% - f.rem(80)) / 3 + f.rem(20)); // centered between col 1 and col 2
+        top: f.rem(163);
+        left: calc((100% - f.rem(80)) / 3 + f.rem(20));
         transform: translate(-50%, -50%);
         z-index: 10;
         background: #ffffff;
@@ -128,12 +140,22 @@
             color: #667085;
         }
     }
+
+    // Responsive Styles
+    @media screen and (min-width: 1025px) {
+
+        &_slider-container {
+            .swiper-scrollbar {
+                display: none;
+            }
+        }
+
+    }
 }
 
-// Responsive Styles
 @media screen and (max-width: 1023px) {
     .home-bestseller {
-        padding: f.rem(40) f.rem(15);
+        padding: f.rem(70) f.rem(12);
 
         &_wrap {
             display: flex;
@@ -153,17 +175,23 @@
 
         &_slider-container {
             width: 100%;
+
+            .swiper {
+                padding-bottom: f.rem(40);
+            }
         }
 
         &_slide-inner {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: f.rem(30) f.rem(12);
+            gap: f.rem(24) f.rem(8);
 
             .product {
+
                 &:nth-child(1),
-                &:nth-child(2) {
-                    margin-bottom: 0;
+                &:nth-child(2),
+                &:nth-child(3) {
+                    max-width: 100%;
                 }
 
                 &:nth-child(1) {
@@ -181,14 +209,14 @@
                     grid-row: 1;
 
                     .product-img {
-                        aspect-ratio: 343/341;
+                        aspect-ratio: 346/337;
                     }
                 }
             }
         }
 
         &_drag {
-            display: none !important;
+            display: none;
         }
     }
 }
