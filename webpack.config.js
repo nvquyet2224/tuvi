@@ -44,7 +44,6 @@ const projectComponent = fs.readFileSync(__dirname + "/src/_project.html");
 const businessBannerComponent = fs.readFileSync(__dirname + "/src/_business-banner.html");
 
 const mainProductComponent = fs.readFileSync(__dirname + "/src/_main-product.html");
-const detailInfo = fs.readFileSync(__dirname + "/src/_detail-info.html");
 const detailVideo = fs.readFileSync(__dirname + "/src/_detail-video.html");
 const detailSafeComponent = fs.readFileSync(__dirname + "/src/_product-detail-safe.html");
 const detailStructureComponent = fs.readFileSync(__dirname + "/src/_product-detail-structure.html");
@@ -114,7 +113,6 @@ module.exports = {
     cmp_commit: ["./src/js/commit.js"],
     cmp_common: ["./src/js/common-ui.js"],
     cmp_contact_block: ["./src/js/contact-block.js"],
-    cmp_detail_info: ["./src/js/detail-info.js"],
     cmp_detail_video: ["./src/js/detail-video.js"],
     cmp_filter: ["./src/js/filter.js"],
     cmp_footer: ["./src/js/footer.js"],
