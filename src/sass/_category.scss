@@ -1,0 +1,21 @@
+@use "function" as f;
+
+.category {
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: f.rem(2);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .category {
+
+    &-list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: f.rem(0);
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@use "function" as f;
+
+.home-collection {
+  padding: f.rem(100) f.rem(20);
+  width: 100%;
+
+  &_wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: f.rem(20);
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .category-img {
+    aspect-ratio: 690/882;
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: f.rem(40) f.rem(20);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .home-collection {
+    padding: f.rem(50) f.rem(11);
+
+    &_wrap {
+      grid-template-columns: 1fr;
+      gap: f.rem(30);
+    }
+
+    &_grid {
+      padding: 0 !important;
+      gap: f.rem(8);
+    }
+  }
+}

@@ -1,0 +1,153 @@
+@use "function" as f;
+
+.vision {
+    margin-bottom: f.rem(120);
+}
+
+.history {
+    position: relative;
+    background-color: var(--global-color);
+    padding: f.rem(180) f.rem(40);
+
+    &_wrap {
+        width: 100%;
+        display: flex;
+
+        .year-list {
+            flex: 0 0 f.rem(255);
+            max-width: f.rem(255);
+
+            .nav-overlay a::before,
+            .nav-overlay span::before {
+                display: none;
+            }
+            .nav-overlay {
+                span {
+                    color: #7BC4FE;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+                li.current {
+                    span {
+                        color: #fff;
+                        font-size: f.rem(24);
+                    }
+                }
+            }
+        }
+
+        .year-detail {
+            position: relative;
+            flex: 0 0 calc(100% - f.rem(255));
+            max-width: calc(100% - f.rem(255));
+            color: #fff;
+
+            .title_block {
+
+                .sub-title,
+                h2 {
+                    color: #fff;
+                }
+            }
+
+            .txt_img {
+                .img {
+                    aspect-ratio: 503/378;
+                }
+
+                .txt {
+                    padding: 0 f.rem(30) 0 0;
+                }
+            }
+            
+
+            .detail {
+                position: absolute;
+                left: 0;
+                top:0;
+                width: 100%;
+                height: auto;
+                pointer-events: none;
+
+                opacity: 0;
+                -webkit-transform: translateY(50%);
+                transform: translateY(50%);
+                -webkit-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+                &.current {
+                    position: relative;
+                    opacity: 1;
+                    -webkit-transform: translateY(0);
+                    transform: translateY(0);
+                    pointer-events: all;
+                    
+                }
+            }
+
+        }
+
+
+    }
+
+
+}
+
+@media screen and (max-width:1023px) {
+    .vision {
+        margin-bottom: f.rem(60);
+    }
+
+
+    .history {
+        padding: f.rem(95) f.rem(16);
+
+        &_wrap {
+
+            .year-list {
+                flex: 0 0 f.rem(100);
+                max-width: f.rem(100);
+
+                .nav-overlay {
+                    display: block;
+
+                    a,
+                    span {
+                        font-size: f.rem(16);
+                        padding: f.rem(14) 0;
+                        display: inline-flex;
+                    }
+                }
+
+                .nav-overlay {
+                    li.current {
+                        span {
+                            font-size: f.rem(20);
+                        }
+                    }
+                }
+            }
+
+            .year-detail {
+                flex: 0 0 calc(100% - f.rem(100));
+                max-width: calc(100% - f.rem(100));
+
+                .txt_img {
+                    .detail_block {
+                        font-size: f.rem(12);
+                        margin-bottom: f.rem(30);
+                    }
+                }
+
+            }
+
+
+        }
+
+
+    }
+
+}

@@ -1,0 +1,49 @@
+@use "function" as f;
+
+.breadcrumb {
+    padding: f.rem(24) f.rem(40);
+
+    ul {
+
+        display: flex;
+        align-items: center;
+        gap: f.rem(12);
+
+        li {
+
+            a,
+            span {
+                font-weight: 500;
+                text-decoration: none;
+                font-size: f.rem(12);
+            }
+
+            a {
+                color: #B4B4B4;
+            }
+
+            span {
+                color: #242420;
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:1023px) {
+    .breadcrumb {
+        padding: f.rem(16);
+
+        ul {
+            gap: f.rem(10);
+        }
+
+        li {
+
+            a,
+            span {
+                font-size: f.rem(12);
+            }
+        }
+    }
+}

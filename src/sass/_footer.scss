@@ -1,0 +1,276 @@
+@use "function" as f;
+
+.footer {
+    position: relative;
+    background-color: var(--global-color);
+    color: #ffffff;
+    padding: f.rem(80) 0 0 0;
+    overflow: hidden;
+
+    // Background shapes using the provided shap.svg
+    &_bg-shape-1 {
+        position: absolute;
+        bottom: f.rem(-160);
+        left: f.rem(100);
+        width: f.rem(450);
+        height: f.rem(450);
+        background-image: url('../images/shap.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &_bg-shape-2 {
+        position: absolute;
+        top: f.rem(-100);
+        right: f.rem(250);
+        width: f.rem(480);
+        height: f.rem(480);
+        background-image: url('../images/shap.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 1;
+        transform: rotate(180deg);
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &_top {
+        display: grid;
+        grid-template-columns: 2.2fr 1fr 1fr;
+        gap: f.rem(60);
+        padding-bottom: f.rem(60);
+    }
+
+    &_col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &_logo {
+        display: inline-block;
+        margin-bottom: f.rem(20);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .white-logo {
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    &_brand-title {
+        font-size: f.rem(18);
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 f.rem(15) 0;
+        letter-spacing: -0.01em;
+    }
+
+    &_brand-desc {
+        font-size: f.rem(13);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.8);
+        margin: 0;
+        max-width: f.rem(420);
+        font-weight: 400;
+    }
+
+    &_title {
+        font-size: f.rem(13);
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: uppercase;
+        margin: 0 0 f.rem(20) 0;
+        letter-spacing: 0.08em;
+    }
+
+    &_menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: f.rem(12);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: f.rem(14);
+            font-weight: 600;
+            transition: opacity 0.25s ease;
+
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+    }
+
+    &_contact-item {
+        margin-bottom: f.rem(28);
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &_contact-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: f.rem(14);
+        font-weight: 700;
+        transition: opacity 0.25s ease;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    &_socials {
+        display: flex;
+        gap: f.rem(12);
+        margin-top: f.rem(10);
+    }
+
+    &_social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: f.rem(36);
+        height: f.rem(36);
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transition: all 0.3s ease;
+
+        img {
+            width: f.rem(18);
+            height: f.rem(18);
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            background-color: #ffffff;
+            border-color: #ffffff;
+
+            img {
+                // Change to the brand red color on hover
+                filter: invert(27%) sepia(82%) saturate(1915%) hue-rotate(338deg) brightness(85%) contrast(89%);
+            }
+        }
+    }
+
+    &_bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding: f.rem(30) 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    &_policies {
+        display: flex;
+        gap: f.rem(24);
+
+        a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: f.rem(12);
+            font-weight: 600;
+            transition: color 0.25s ease;
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    &_copyright {
+        font-size: f.rem(11);
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+// Responsive Styles
+@media screen and (max-width: 1023px) {
+    .footer {
+        padding: f.rem(50) 0 0 0;
+
+        &_bg-shape-1 {
+            bottom: f.rem(-100);
+            left: f.rem(-50);
+            width: f.rem(300);
+            height: f.rem(300);
+        }
+
+        &_bg-shape-2 {
+            top: f.rem(-50);
+            right: f.rem(-100);
+            width: f.rem(320);
+            height: f.rem(320);
+        }
+
+        &_top {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(40);
+            align-items: center;
+            text-align: center;
+            padding-bottom: f.rem(45);
+        }
+
+        &_col {
+            align-items: center;
+
+            &-brand {
+                max-width: 100%;
+            }
+        }
+
+        &_logo {
+            margin-bottom: f.rem(16);
+        }
+
+        &_brand-desc {
+            max-width: 100%;
+        }
+
+        &_title {
+            margin-bottom: f.rem(14);
+        }
+
+        &_socials {
+            justify-content: center;
+        }
+
+        &_bottom {
+            flex-direction: column-reverse;
+            gap: f.rem(20);
+            text-align: center;
+            padding: f.rem(25) 0;
+        }
+
+        &_policies {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: f.rem(15);
+        }
+    }
+}
