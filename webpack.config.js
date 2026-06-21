@@ -15,14 +15,14 @@ const headerComponent = fs.readFileSync(__dirname + "/src/_component-header.html
 const footerComponent = fs.readFileSync(__dirname + "/src/_component-footer.html");
 
 const homeBanner = fs.readFileSync(__dirname + "/src/_home-banner.html");
-const productCategory = fs.readFileSync(__dirname + "/src/_product-category.html");
+const homeCategory = fs.readFileSync(__dirname + "/src/_home-category.html");
 const homeCollection = fs.readFileSync(__dirname + "/src/_home-collection.html");
 const homeBestseller = fs.readFileSync(__dirname + "/src/_home-bestseller.html");
 const homeWhy = fs.readFileSync(__dirname + "/src/_home-why.html");
 const homePurpose = fs.readFileSync(__dirname + "/src/_home-purpose.html");
 
-const lookComponent = fs.readFileSync(__dirname + "/src/_look.html");
-const productPromotion = fs.readFileSync(__dirname + "/src/_product-promotion.html");
+const homeLook = fs.readFileSync(__dirname + "/src/_home-look.html");
+const homePromotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
 
 const minifyRules = {
   collapseWhitespace: true,
@@ -48,13 +48,13 @@ module.exports = {
     cmp_common: ["./src/js/common-ui.js"],
     cmp_banner: ["./src/js/banner.js"],
     cmp_swiper: ["./src/js/swiper-ui.js"],
-    cmp_category: ["./src/js/category.js"],
+    cmp_home_category: ["./src/js/home-category.js"],
     cmp_home_collection: ["./src/js/home-collection.js"],
     cmp_home_bestseller: ["./src/js/home-bestseller.js"],
     cmp_home_why: ["./src/js/home-why.js"],
     cmp_home_purpose: ["./src/js/home-purpose.js"],
-    cmp_look: ["./src/js/look.js"],
-    cmp_product_list: ["./src/js/product-list.js"],
+    cmp_home_look: ["./src/js/home-look.js"],
+    cmp_home_promotion: ["./src/js/home-promotion.js"],
     cmp_footer: ["./src/js/footer.js"],
   },
   output: {
@@ -175,13 +175,13 @@ module.exports = {
       svg: svg,
       header: headerComponent,
       home_banner: homeBanner,
-      productCategory: productCategory,
+      homeCategory: homeCategory,
       homeCollection: homeCollection,
       homeBestseller: homeBestseller,
       homeWhy: homeWhy,
       homePurpose: homePurpose,
-      look: lookComponent,
-      productPromotion: productPromotion,
+      homeLook: homeLook,
+      homePromotion: homePromotion,
       footer: footerComponent,
       template: "src/index.html",
       minify: minify,
