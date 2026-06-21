@@ -14,15 +14,15 @@ const svg = fs.readFileSync(__dirname + "/src/_svg.html");
 const headerComponent = fs.readFileSync(__dirname + "/src/_component-header.html");
 const footerComponent = fs.readFileSync(__dirname + "/src/_component-footer.html");
 
-const homeBanner = fs.readFileSync(__dirname + "/src/_home-banner.html");
-const homeCategory = fs.readFileSync(__dirname + "/src/_home-category.html");
-const homeCollection = fs.readFileSync(__dirname + "/src/_home-collection.html");
-const homeBestseller = fs.readFileSync(__dirname + "/src/_home-bestseller.html");
-const homeWhy = fs.readFileSync(__dirname + "/src/_home-why.html");
-const homePurpose = fs.readFileSync(__dirname + "/src/_home-purpose.html");
+const home_banner = fs.readFileSync(__dirname + "/src/_home-banner.html");
+const home_category = fs.readFileSync(__dirname + "/src/_home-category.html");
+const home_collection = fs.readFileSync(__dirname + "/src/_home-collection.html");
+const home_bestseller = fs.readFileSync(__dirname + "/src/_home-bestseller.html");
+const home_why = fs.readFileSync(__dirname + "/src/_home-why.html");
+const home_purpose = fs.readFileSync(__dirname + "/src/_home-purpose.html");
 
-const homeLook = fs.readFileSync(__dirname + "/src/_home-look.html");
-const homePromotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
+const home_look = fs.readFileSync(__dirname + "/src/_home-look.html");
+const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
 
 const minifyRules = {
   collapseWhitespace: true,
@@ -168,14 +168,14 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: headerComponent,
-      home_banner: homeBanner,
-      home_category: homeCategory,
-      home_collection: homeCollection,
-      home_bestseller: homeBestseller,
-      home_why: homeWhy,
-      home_purpose: homePurpose,
-      home_look: homeLook,
-      home_promotion: homePromotion,
+      home_banner: home_banner,
+      home_category: home_category,
+      home_collection: home_collection,
+      home_bestseller: home_bestseller,
+      home_why: home_why,
+      home_purpose: home_purpose,
+      home_look: home_look,
+      home_promotion: home_promotion,
       footer: footerComponent,
       template: "src/index.html",
       minify: minify,
@@ -186,7 +186,7 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: headerComponent,
-      home_banner: homeBanner,
+      home_banner: home_banner,
       footer: footerComponent,
       template: "src/women.html",
       minify: minify,
@@ -197,7 +197,7 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: headerComponent,
-      home_banner: homeBanner,
+      home_banner: home_banner,
       footer: footerComponent,
       template: "src/men.html",
       minify: minify,
@@ -208,7 +208,7 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: headerComponent,
-      home_banner: homeBanner,
+      home_banner: home_banner,
       footer: footerComponent,
       template: "src/kids.html",
       minify: minify,
@@ -219,7 +219,7 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: headerComponent,
-      home_banner: homeBanner,
+      home_banner: home_banner,
       footer: footerComponent,
       template: "src/collection.html",
       minify: minify,
@@ -230,7 +230,7 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: headerComponent,
-      home_banner: homeBanner,
+      home_banner: home_banner,
       footer: footerComponent,
       template: "src/sale.html",
       minify: minify,
