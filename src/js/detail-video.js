@@ -1,1 +1,0 @@
-import "../sass/_detail-video.scss";

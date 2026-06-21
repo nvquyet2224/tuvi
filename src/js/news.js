@@ -1,1 +1,0 @@
-import "../sass/news.scss";

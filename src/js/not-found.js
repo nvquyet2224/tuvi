@@ -1,1 +1,0 @@
-import "../sass/not-found.scss";

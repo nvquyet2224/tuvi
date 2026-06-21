@@ -1,1 +1,0 @@
-import "../sass/_search-result.scss";

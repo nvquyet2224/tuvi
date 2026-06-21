@@ -1,1 +1,0 @@
-import "../sass/_banner-business.scss";

@@ -1,1 +1,0 @@
-import "../sass/new-detail.scss";
