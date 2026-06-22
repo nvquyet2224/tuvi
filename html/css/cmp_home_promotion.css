@@ -1,0 +1,42 @@
+.products {
+  background: #ffffff;
+  padding: 6.25rem 0;
+}
+.products.product-related {
+  padding-top: 2.5rem;
+}
+.products.by-inventory, .products.by-price {
+  padding: 0;
+  margin-bottom: 7.5rem;
+}
+.products .title_block {
+  padding: 0 1.25rem;
+  text-transform: uppercase;
+}
+.products_wrap .title_block {
+  margin-bottom: 2rem;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  padding: 0 1.25rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .products {
+    padding: 4.125rem 0;
+  }
+  .products .title_block {
+    padding: 0 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .products-list {
+    padding: 0 0.75rem;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 0.5rem;
+    padding: 0 0.75rem;
+  }
+}

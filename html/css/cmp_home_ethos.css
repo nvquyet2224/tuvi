@@ -1,0 +1,146 @@
+.home-ethos {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1440/900;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+.home-ethos_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.home-ethos_bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  -webkit-transition: transform 10s ease;
+  transition: transform 10s ease;
+}
+.home-ethos_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 2;
+}
+.home-ethos_container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9rem;
+  width: 100%;
+  height: 100%;
+  max-width: 75rem;
+  padding: 0 2.5rem;
+  margin: 0 auto;
+}
+.home-ethos_text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  pointer-events: auto;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.home-ethos_text span {
+  display: inline-block;
+}
+.home-ethos_text:hover {
+  color: #ffffff;
+  text-shadow: 0 0 0.9375rem rgba(255, 255, 255, 0.6);
+}
+.home-ethos_text-left {
+  transform-origin: right center;
+}
+.home-ethos_text-left:hover {
+  -webkit-transform: translateX(-0.625rem) scale(1.05);
+  transform: translateX(-0.625rem) scale(1.05);
+}
+.home-ethos_text-right {
+  transform-origin: left center;
+}
+.home-ethos_text-right:hover {
+  -webkit-transform: translateX(0.625rem) scale(1.05);
+  transform: translateX(0.625rem) scale(1.05);
+}
+.home-ethos_card {
+  width: 23.9375rem;
+  aspect-ratio: 383/575;
+  position: relative;
+  z-index: 4;
+  box-shadow: 0 1.25rem 3.125rem rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  will-change: transform;
+  -webkit-transition: transform 0.15s ease-out, box-shadow 0.6s, border-color 0.6s;
+  transition: transform 0.15s ease-out, box-shadow 0.6s, border-color 0.6s;
+}
+.home-ethos_card-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home-ethos_card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.home-ethos_card:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1.875rem 3.75rem rgba(0, 0, 0, 0.8);
+}
+.home-ethos:hover .home-ethos_bg img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 1023px) {
+  .home-ethos {
+    height: auto;
+    aspect-ratio: 375/750;
+    padding: 0;
+  }
+  .home-ethos_container {
+    flex-direction: column;
+    gap: 3.75rem;
+    padding: 0 1.25rem;
+    text-align: center;
+    justify-content: center;
+  }
+  .home-ethos_text {
+    position: static;
+    -webkit-transform: none;
+    transform: none;
+    font-size: 1.25rem;
+    letter-spacing: 0.125rem;
+  }
+  .home-ethos_text-left:hover, .home-ethos_text-right:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  .home-ethos_card {
+    width: 14.375rem;
+    aspect-ratio: 230/340;
+    margin: 0 auto;
+  }
+}
