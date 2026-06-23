@@ -40,7 +40,7 @@ const minimized = false;
 
 module.exports = {
   mode: devMode ? "development" : "production",
-  watch: true,
+  watch: !process.env.VERCEL,
   entry: {
     critical: ["./src/js/critical.js"],
     cmp_critical: ["./src/js/critical.js"],
