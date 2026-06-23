@@ -53,7 +53,14 @@ button {
   height: auto;
 }
 
-.container,
+.container {
+  width: 100%;
+  max-width: f.rem(1400);
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
 .container-full {
   width: 100%;
   height: auto;

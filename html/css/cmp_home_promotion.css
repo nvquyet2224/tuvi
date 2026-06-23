@@ -2,25 +2,17 @@
   background: #ffffff;
   padding: 6.25rem 0;
 }
-.products.product-related {
-  padding-top: 2.5rem;
-}
-.products.by-inventory, .products.by-price {
-  padding: 0;
-  margin-bottom: 7.5rem;
-}
-.products .title_block {
+.products_wrap {
   padding: 0 1.25rem;
-  text-transform: uppercase;
 }
 .products_wrap .title_block {
   margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  padding: 0 1.25rem;
 }
 
 @media screen and (max-width: 1023px) {

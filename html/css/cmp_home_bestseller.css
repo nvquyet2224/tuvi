@@ -1,10 +1,11 @@
 .home-bestseller {
-  padding: 6.25rem 1.25rem;
+  padding: 6.25rem 0;
   overflow: hidden;
 }
 .home-bestseller_wrap {
   position: relative;
   width: 100%;
+  padding: 0 1.25rem;
 }
 .home-bestseller_header {
   position: absolute;

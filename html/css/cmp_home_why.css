@@ -1,22 +1,22 @@
 .home-why {
   background-color: #ffffff;
-  padding: 6.25rem 0;
+  padding: 8.75rem 0;
   overflow: hidden;
 }
 .home-why_wrap {
   position: relative;
   width: 100%;
-  padding: 0 8.625rem;
+  padding: 0 7.875rem;
 }
 .home-why_slide-inner {
   width: 100%;
   display: flex;
-  gap: 8.625rem;
   align-items: center;
+  justify-content: space-between;
 }
 .home-why_image-col {
-  flex: 0 0 35.75rem;
-  max-width: 35.75rem;
+  flex: 0 0 49.140893471%;
+  max-width: 49.140893471%;
   line-height: 0;
 }
 .home-why_image-col img {
@@ -24,7 +24,8 @@
   height: auto;
 }
 .home-why_content-col {
-  flex: 1;
+  flex: 0 0 40.003436426%;
+  max-width: 40.003436426%;
 }
 .home-why_title {
   font-size: 2.75rem;
@@ -37,6 +38,7 @@
   position: absolute;
   left: 1.25rem;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;

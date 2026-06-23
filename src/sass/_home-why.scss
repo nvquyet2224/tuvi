@@ -2,25 +2,26 @@
 
 .home-why {
     background-color: #ffffff;
-    padding: f.rem(100) 0;
+    padding: f.rem(140) 0;
     overflow: hidden;
 
     &_wrap {
         position: relative;
         width: 100%;
-        padding: 0 f.rem(138);
+        padding: 0 f.rem(126);
     }
 
     &_slide-inner {
         width: 100%;
         display: flex;
-        gap: f.rem(138);
+        // gap: f.rem(138);
         align-items: center;
+        justify-content: space-between;
     }
 
     &_image-col {
-        flex: 0 0 f.rem(572);
-        max-width: f.rem(572);
+        flex: 0 0 49.140893471%;
+        max-width: 49.140893471%;
         line-height: 0;
 
         img {
@@ -30,7 +31,9 @@
     }
 
     &_content-col {
-        flex: 1;
+        // flex: 1;
+        flex: 0 0 40.003436426%;
+        max-width: 40.003436426%;
     }
 
     &_title {
@@ -47,6 +50,7 @@
         position: absolute;
         left: f.rem(20);
         top: 50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         display: flex;
         flex-direction: column;

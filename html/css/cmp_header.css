@@ -683,6 +683,7 @@
   height: auto;
   left: 0;
   top: 0;
+  background-color: #fff;
   z-index: 20;
   -webkit-transition: top 0.1s ease, background-color 0.2s ease-in;
   transition: top 0.1s ease, background-color 0.2s ease-in;
@@ -692,6 +693,9 @@
 }
 .header-container {
   width: 100%;
+  max-width: 87.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .header .select-language .select-selected,
 .header .select-language .select-arrow {
@@ -794,10 +798,7 @@
   display: flex;
   padding: 0 1.25rem;
   height: 5.375rem;
-  background-color: #fff;
   align-items: center;
-  -webkit-transition: background-color 0.2s ease-in;
-  transition: background-color 0.2s ease-in;
 }
 .header-mid .logo {
   width: 4.375rem;
@@ -977,12 +978,6 @@
   background-color: #fff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   top: 0rem;
-}
-.header.sticky .header-top {
-  background-color: var(--global-color);
-}
-.header.sticky .header-mid {
-  background-color: #fff;
 }
 .header.sticky .header-mid svg {
   filter: invert(0);

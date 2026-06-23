@@ -7,8 +7,9 @@
 }
 .footer .shape_bg {
   position: absolute;
-  width: 22.75rem;
-  height: 22.75rem;
+  width: 25.277777778%;
+  max-width: 22.75rem;
+  max-height: 22.75rem;
   background: url(../images/shape.svg) no-repeat center center;
   background-size: 100% auto;
   z-index: 0;
@@ -17,15 +18,22 @@
   pointer-events: none;
   opacity: 0.4;
 }
+.footer .shape_bg::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: 100%;
+}
 .footer .shape_bg-one {
-  left: 15.4375rem;
+  left: 16.666666667%;
   bottom: 0.625rem;
   -webkit-animation: floatFooterBlobOne 22s infinite ease-in-out;
   animation: floatFooterBlobOne 22s infinite ease-in-out;
 }
 .footer .shape_bg-two {
   top: 2.375rem;
-  right: 16.875rem;
+  right: 20.833333333%;
   -webkit-animation: floatFooterBlobTwo 26s infinite ease-in-out;
   animation: floatFooterBlobTwo 26s infinite ease-in-out;
 }

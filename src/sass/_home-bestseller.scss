@@ -1,12 +1,13 @@
 @use "function" as f;
 
 .home-bestseller {
-    padding: f.rem(100) f.rem(20);
+    padding: f.rem(100) 0;
     overflow: hidden;
 
     &_wrap {
         position: relative;
         width: 100%;
+        padding: 0 f.rem(20);
     }
 
     &_header {

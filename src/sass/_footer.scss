@@ -9,8 +9,9 @@
 
     .shape_bg {
         position: absolute;
-        width: f.rem(364);
-        height: f.rem(364);
+        width: 25.277777778%;
+        max-width: f.rem(364);
+        max-height: f.rem(364);
         background: url(../images/shape.svg) no-repeat center center;
         background-size: 100% auto;
         z-index: 0;
@@ -19,8 +20,16 @@
         pointer-events: none;
         opacity: 0.4;
 
+         &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: auto;
+            padding-top: 100%;
+        }
+
         &-one {
-            left: f.rem(247);
+            left: 16.666666667%;
             bottom: f.rem(10);
             -webkit-animation: floatFooterBlobOne 22s infinite ease-in-out;
             animation: floatFooterBlobOne 22s infinite ease-in-out;
@@ -28,7 +37,7 @@
 
         &-two {
             top: f.rem(38);
-            right: f.rem(270);
+            right: 20.833333333%;
             -webkit-animation: floatFooterBlobTwo 26s infinite ease-in-out;
             animation: floatFooterBlobTwo 26s infinite ease-in-out;
         }

@@ -48,7 +48,14 @@ button {
   height: auto;
 }
 
-.container,
+.container {
+  width: 100%;
+  max-width: 87.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
 .container-full {
   width: 100%;
   height: auto;

@@ -288,7 +288,7 @@
     &_header {
         position: absolute;
         top: f.rem(50);
-        left: f.rem(210);
+        left: max(f.rem(20), calc((100% - f.rem(1400)) / 2 + f.rem(20)));
         z-index: 10;
         display: block;
         gap: f.rem(20);

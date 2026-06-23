@@ -1,5 +1,5 @@
 .home-collection {
-  padding: 6.25rem 1.25rem;
+  padding: 6.25rem 0;
   width: 100%;
 }
 .home-collection_wrap {
@@ -8,6 +8,7 @@
   gap: 1.25rem;
   width: 100%;
   align-items: stretch;
+  padding: 0 1.25rem;
 }
 .home-collection .category-img {
   aspect-ratio: 690/882;

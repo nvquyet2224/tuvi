@@ -1,7 +1,7 @@
 @use "function" as f;
 
 .home-collection {
-  padding: f.rem(100) f.rem(20);
+  padding: f.rem(100) 0;
   width: 100%;
 
   &_wrap {
@@ -10,6 +10,7 @@
     gap: f.rem(20);
     width: 100%;
     align-items: stretch;
+    padding: 0 f.rem(20);
   }
 
   .category-img {

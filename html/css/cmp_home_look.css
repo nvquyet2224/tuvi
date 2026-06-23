@@ -234,7 +234,7 @@
 .look_header {
   position: absolute;
   top: 3.125rem;
-  left: 13.125rem;
+  left: max(1.25rem, (100% - 87.5rem) / 2 + 1.25rem);
   z-index: 10;
   display: block;
   gap: 1.25rem;

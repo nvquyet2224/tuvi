@@ -4,24 +4,11 @@
   background: #ffffff;
   padding: f.rem(100) 0;
 
-  &.product-related {
-    padding-top: f.rem(40);
-  }
-
-  &.by-inventory,
-  &.by-price {
-    padding: 0;
-    margin-bottom: f.rem(120);
-  }
-
-  .title_block {
-    padding: 0 f.rem(20);
-    text-transform: uppercase;
-  }
-
   &_wrap {
+    padding: 0 f.rem(20);
     .title_block {
       margin-bottom: f.rem(32);
+      text-transform: uppercase;
     }
   }
 
@@ -29,7 +16,6 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: f.rem(20);
-    padding: 0 f.rem(20);
   }
 }
 

@@ -12,22 +12,21 @@
     &_top-inner {
         position: relative;
         display: flex;
-        padding: f.rem(140) f.rem(127) f.rem(350) f.rem(144);
+        padding: f.rem(140) f.rem(115) f.rem(350) f.rem(115);
         justify-content: space-between;
         z-index: 1;
     }
 
     &_title-col {
-        flex: 0 0 49.316239316%;
-        max-width: 49.316239316%;
+        flex: 0 0 47.606837607%;
+        max-width: 47.606837607%;
     }
 
     &_title {
         color: #FF9BA2;
         font-size: f.rem(150);
         line-height: 1.1;
-        letter-spacing: -1px;
-        text-transform: lowercase;
+        letter-spacing: -0.08em;
         text-transform: uppercase;
     }
 
@@ -61,8 +60,11 @@
 
     &_bg-blob {
         position: absolute;
-        width: f.rem(485);
-        height: f.rem(485);
+        //width: f.rem(485);
+        //height: f.rem(485);
+        width: 33.680555556%;
+        max-width: f.rem(485);
+        max-height: f.rem(485);
         background: url(../images/shape.svg) no-repeat center center;
         background-size: 100% auto;
         z-index: 0;
@@ -70,6 +72,14 @@
         will-change: transform;
         pointer-events: none;
         opacity: 0.4;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: auto;
+            padding-top: 100%;
+        }
 
         &-top {
             left: f.rem(-50);
@@ -88,13 +98,14 @@
     }
 
     &_bottom {
-        padding: 0 f.rem(20) f.rem(140) f.rem(20);
+        padding-bottom: f.rem(140);
         margin-top: f.rem(-230);
     }
 
     &_slider-container {
         position: relative;
         width: 100%;
+        padding: 0 f.rem(20);
 
         .swiper {
             width: 100%;
@@ -189,7 +200,7 @@
             display: flex;
             flex-direction: column;
             gap: f.rem(40);
-            padding: f.rem(70) f.rem(12) f.rem(180) f.rem(12);
+            padding: f.rem(70) 0 f.rem(180) 0;
         }
 
         &_title-col,
