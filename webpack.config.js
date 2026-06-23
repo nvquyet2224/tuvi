@@ -24,6 +24,7 @@ const home_ethos = fs.readFileSync(__dirname + "/src/_home-ethos.html");
 
 const home_look = fs.readFileSync(__dirname + "/src/_home-look.html");
 const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
+const product_detail = fs.readFileSync(__dirname + "/src/_product-detail.html");
 
 const minifyRules = {
   collapseWhitespace: true,
@@ -58,6 +59,7 @@ module.exports = {
     cmp_home_look: ["./src/js/home-look.js"],
     cmp_home_promotion: ["./src/js/home-promotion.js"],
     cmp_footer: ["./src/js/footer.js"],
+    cmp_product_detail: ["./src/js/product-detail.js"],
   },
   output: {
     publicPath: "../",
@@ -236,6 +238,17 @@ module.exports = {
       home_banner: home_banner,
       footer: footer,
       template: "src/sale.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "product-detail.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      footer: footer,
+      product_detail: product_detail,
+      template: "src/product-detail.html",
       minify: minify,
     }),
     new HtmlWebpackPlugin({
