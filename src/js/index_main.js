@@ -1,4 +1,5 @@
 function lookSlider() {
+    let mobileSlider = null;
 
     const setCurrent = (target) => {
         // Banner
@@ -30,6 +31,24 @@ function lookSlider() {
                 elm.classList.remove("current");
             }
         });
+
+        // Detail Descriptions
+        document.querySelectorAll(".look_detail--item").forEach((elm) => {
+            const _target = elm.getAttribute("data-target");
+            if (_target === target) {
+                elm.classList.add("current");
+            } else {
+                elm.classList.remove("current");
+            }
+        });
+
+        // Sync Mobile Slider
+        if (mobileSlider) {
+            const slideIndex = parseInt(target) - 1;
+            if (!isNaN(slideIndex) && mobileSlider.activeIndex !== slideIndex) {
+                mobileSlider.slideTo(slideIndex);
+            }
+        }
     };
 
     // Desktop Tabs event listener
@@ -41,6 +60,52 @@ function lookSlider() {
                 const target = tabItem.getAttribute("data-target");
                 setCurrent(target);
             }
+        });
+    }
+
+    // Initialize Mobile Slider
+    if (document.querySelector(".cardSlider")) {
+        mobileSlider = new Swiper(".cardSlider", {
+            effect: "slide",
+            loop: false,
+            speed: 1000,
+            preloadImages: false,
+            lazy: true,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            allowTouchMove: true,
+            watchOverflow: true,
+            initialSlide: 0,
+            autoHeight: false,
+            scrollbar: {
+                el: ".cardSlider .swiper-scrollbar",
+                hide: false,
+                draggable: true,
+            },
+            mousewheel: {
+                sensitivity: 1,
+                forceToAxis: true,
+                releaseOnEdges: true,
+            },
+            navigation: {
+                nextEl: ".look .nav-next",
+                prevEl: ".look .nav-prev",
+            },
+            on: {
+                transitionStart: function (swiper) {
+                    const currentIndex = swiper.activeIndex;
+                    const currentSlide = swiper.slides[currentIndex];
+                    if (currentSlide) {
+                        const cur = currentSlide.querySelector(".look_pot");
+                        if (cur) {
+                            const target = cur.getAttribute("data-target");
+                            setCurrent(target);
+                        }
+                    }
+                },
+            },
         });
     }
 }
@@ -58,7 +123,7 @@ function productPromotionSlider() {
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
             slidesPerView: 4,
-            spaceBetween: 0,
+            spaceBetween: 20,
             freeMode: true,
             grabCursor: true,
             allowTouchMove: true,
@@ -78,11 +143,11 @@ function productPromotionSlider() {
             breakpoints: {
                 320: {
                     slidesPerView: 1.5,
-                    spaceBetween: 0
+                    spaceBetween: 20
                 },
                 1024: {
                     slidesPerView: 4,
-                    spaceBetween: 0
+                    spaceBetween: 20
                 }
             },
             navigation: {
@@ -215,7 +280,31 @@ function homeEthosTilt() {
     });
 }
 
+function homeBannerSlider() {
+    if (document.querySelector(".homeBannerSlider")) {
+        new Swiper(".homeBannerSlider", {
+            effect: "slide",
+            loop: true,
+            speed: 1000,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            allowTouchMove: true,
+            watchOverflow: true,
+            initialSlide: 0,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.homeBannerSlider .swiper-pagination',
+                clickable: true
+            }
+        });
+    }
+}
+
 (function () {
+    homeBannerSlider();
     lookSlider();
     productPromotionSlider();
     homeBestsellerSlider();
@@ -223,3 +312,4 @@ function homeEthosTilt() {
     homePurposeSlider();
     homeEthosTilt();
 })();
+

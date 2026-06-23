@@ -6,9 +6,79 @@
 
   &_wrap {
     padding: 0 f.rem(20);
+
     .title_block {
       margin-bottom: f.rem(32);
       text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .block-nav {
+      display: flex;
+      align-items: center;
+      gap: f.rem(16);
+      border: none;
+      background: none;
+
+      .nav-prev,
+      .nav-next {
+        width: f.rem(24);
+        height: f.rem(24);
+        border: none;
+        border-radius: 0;
+        background: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #111111;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+          opacity: 0.7;
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0.3;
+          cursor: not-allowed;
+        }
+
+        svg {
+          width: f.rem(20);
+          height: f.rem(20);
+          transform: none !important; // clear default rotation/mirror
+        }
+      }
+
+      .divider {
+        width: 1px;
+        height: f.rem(16);
+        background-color: #e4e7ec;
+      }
+    }
+  }
+
+  .productsSlider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: f.rem(40);
+
+    .swiper-scrollbar {
+      bottom: 0;
+      height: 2px;
+      background: #f2f4f7;
+      border-radius: 0;
+      width: 100%;
+      left: 0;
+
+      .swiper-scrollbar-drag {
+        background: #344054;
+        border-radius: 0;
+      }
     }
   }
 
@@ -27,9 +97,16 @@
   .products {
     padding: f.rem(66) 0;
 
+    &_wrap {
+      padding: 0 0 0 f.rem(12);
+    }
+
     .title_block {
       padding: 0 f.rem(12);
       margin-bottom: f.rem(20);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
     }
 
     &-list {

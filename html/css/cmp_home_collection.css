@@ -26,6 +26,7 @@
   .home-collection_wrap {
     grid-template-columns: 1fr;
     gap: 1.875rem;
+    padding: 0;
   }
   .home-collection_grid {
     padding: 0 !important;
