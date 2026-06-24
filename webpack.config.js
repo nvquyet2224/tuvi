@@ -25,6 +25,17 @@ const home_ethos = fs.readFileSync(__dirname + "/src/_home-ethos.html");
 const home_look = fs.readFileSync(__dirname + "/src/_home-look.html");
 const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
 const product_detail = fs.readFileSync(__dirname + "/src/_product-detail.html");
+const categories = fs.readFileSync(__dirname + "/src/_categories.html");
+const sub_banner_html = fs.readFileSync(__dirname + "/src/_sub-banner.html", "utf8");
+
+const makeSubBanner = (title, img = "sub-banner") => {
+  const hasSp = fs.existsSync(path.join(__dirname, "src", "images", `${img}-sp.jpg`));
+  const spSrc = hasSp ? `images/${img}-sp.jpg` : `images/${img}.jpg`;
+  return sub_banner_html
+    .replace(/\${spSrc}/g, spSrc)
+    .replace(/\${img}/g, img)
+    .replace(/\${title}/g, title);
+};
 
 const minifyRules = {
   collapseWhitespace: true,
@@ -60,6 +71,8 @@ module.exports = {
     cmp_home_promotion: ["./src/js/home-promotion.js"],
     cmp_footer: ["./src/js/footer.js"],
     cmp_product_detail: ["./src/js/product-detail.js"],
+    cmp_categories: ["./src/js/categories.js"],
+    cmp_jquery_ui: ["./src/js/jquery-ui-ui.js"],
   },
   output: {
     publicPath: "../",
@@ -159,6 +172,12 @@ module.exports = {
           info: { minimized: !minimized },
           noErrorOnMissing: true,
         },
+        {
+          from: "src/js/cmp_categories.js",
+          to: "js/cmp_categories.js",
+          info: { minimized: !minimized },
+          noErrorOnMissing: true,
+        },
         { from: "src/videos", to: "videos", noErrorOnMissing: true },
         { from: "src/jsons", to: "jsons", noErrorOnMissing: true }
       ],
@@ -191,7 +210,8 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      home_banner: home_banner,
+      sub_banner: makeSubBanner("women"),
+      categories: categories,
       footer: footer,
       template: "src/women.html",
       minify: minify,
@@ -202,7 +222,8 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      home_banner: home_banner,
+      sub_banner: makeSubBanner("men"),
+      categories: categories,
       footer: footer,
       template: "src/men.html",
       minify: minify,
@@ -213,7 +234,8 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      home_banner: home_banner,
+      sub_banner: makeSubBanner("kids"),
+      categories: categories,
       footer: footer,
       template: "src/kids.html",
       minify: minify,
@@ -224,7 +246,8 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      home_banner: home_banner,
+      sub_banner: makeSubBanner("collection"),
+      categories: categories,
       footer: footer,
       template: "src/collection.html",
       minify: minify,
@@ -235,7 +258,8 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      home_banner: home_banner,
+      sub_banner: makeSubBanner("sale"),
+      categories: categories,
       footer: footer,
       template: "src/sale.html",
       minify: minify,
