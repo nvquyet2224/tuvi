@@ -63,7 +63,7 @@
     &_wrap {
         position: relative;
         line-height: 0;
-        
+
         &::before {
             content: '';
             position: relative;
@@ -132,7 +132,7 @@
             font-size: f.rem(24);
             line-height: 1.4;
             max-width: f.rem(524);
-            margin-bottom: f.rem(32);
+            margin-bottom: f.rem(60);
         }
 
         h1 {
@@ -144,19 +144,37 @@
 
     }
 
+    @media screen and (min-width: 1025px) {
+        &_detail {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            h1 {
+                margin-bottom: 0;
+            }
+
+            .brief {
+                margin-top: auto;
+
+                .link-but {
+                    margin-top: f.rem(32);
+                }
+            }
+        }
+    }
+
 
 }
-
-@media screen and (min-width: 1024px) {}
 
 
 @media screen and (max-width:1023px) {
     .banner {
         width: 100%;
 
-         &_wrap {
+        &_wrap {
             &::before {
-               padding-top: 206.666666667%;
+                padding-top: 206.666666667%;
             }
         }
 

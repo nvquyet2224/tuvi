@@ -116,12 +116,28 @@
   font-size: 1.5rem;
   line-height: 1.4;
   max-width: 32.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3.75rem;
 }
 .banner_detail h1 {
   margin-bottom: 11.25rem;
   color: #fff;
   text-transform: uppercase;
+}
+@media screen and (min-width: 1025px) {
+  .banner_detail {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .banner_detail h1 {
+    margin-bottom: 0;
+  }
+  .banner_detail .brief {
+    margin-top: auto;
+  }
+  .banner_detail .brief .link-but {
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (max-width: 1023px) {
