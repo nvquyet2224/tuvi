@@ -26,7 +26,11 @@ const home_look = fs.readFileSync(__dirname + "/src/_home-look.html");
 const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
 const product_detail = fs.readFileSync(__dirname + "/src/_product-detail.html");
 const categories = fs.readFileSync(__dirname + "/src/_categories.html");
+const blogs = fs.readFileSync(__dirname + "/src/_blogs.html");
+const block_detail = fs.readFileSync(__dirname + "/src/_block-detail.html");
+const related_blogs = fs.readFileSync(__dirname + "/src/_component-related-blogs.html");
 const sub_banner_html = fs.readFileSync(__dirname + "/src/_sub-banner.html", "utf8");
+const countdown = fs.readFileSync(__dirname + "/src/_component-countdown.html");
 
 const makeSubBanner = (title, img = "sub-banner") => {
   const hasSp = fs.existsSync(path.join(__dirname, "src", "images", `${img}-sp.jpg`));
@@ -73,6 +77,9 @@ module.exports = {
     cmp_product_detail: ["./src/js/product-detail.js"],
     cmp_categories: ["./src/js/categories.js"],
     cmp_jquery_ui: ["./src/js/jquery-ui-ui.js"],
+    cmp_sub_banner: ["./src/js/sub-banner.js"],
+    cmp_countdown: ["./src/js/component-countdown.js"],
+    cmp_block_detail: ["./src/js/block-detail.js"],
   },
   output: {
     publicPath: "../",
@@ -212,6 +219,7 @@ module.exports = {
       header: header,
       sub_banner: makeSubBanner("women"),
       categories: categories,
+      countdown: countdown,
       footer: footer,
       template: "src/women.html",
       minify: minify,
@@ -259,7 +267,8 @@ module.exports = {
       svg: svg,
       header: header,
       sub_banner: makeSubBanner("sale"),
-      categories: categories,
+      blogs: blogs,
+      countdown: countdown,
       footer: footer,
       template: "src/sale.html",
       minify: minify,
@@ -273,6 +282,19 @@ module.exports = {
       footer: footer,
       product_detail: product_detail,
       template: "src/product-detail.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "block-detail.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      sub_banner: makeSubBanner("Blog Detail"),
+      block_detail: block_detail,
+      related_blogs: related_blogs,
+      footer: footer,
+      template: "src/block-detail.html",
       minify: minify,
     }),
     new HtmlWebpackPlugin({

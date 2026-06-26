@@ -112,59 +112,62 @@ function lookSlider() {
 
 
 function productPromotionSlider() {
-    if (document.querySelector(".product-promotion .productsSlider")) {
-        new Swiper(".product-promotion .productsSlider", {
-            //modules: [Navigation, Scrollbar, FreeMode, Mousewheel],
-            effect: "slide",
-            loop: false,
-            speed: 1000,
-            preloadImages: false,
-            lazy: true,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
-            slidesPerView: 4,
-            spaceBetween: 20,
-            freeMode: true,
-            grabCursor: true,
-            allowTouchMove: true,
-            watchOverflow: true,
-            initialSlide: 0,
-            autoHeight: false,
-            scrollbar: {
-                el: '.product-promotion .swiper-scrollbar',
-                hide: false,
-                draggable: true
-            },
-            mousewheel: {
-                sensitivity: 1,
-                forceToAxis: true,
-                releaseOnEdges: true,
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 20
+    document.querySelectorAll(".product-promotion").forEach((section) => {
+        const slider = section.querySelector(".productsSlider");
+        if (slider) {
+            new Swiper(slider, {
+                //modules: [Navigation, Scrollbar, FreeMode, Mousewheel],
+                effect: "slide",
+                loop: false,
+                speed: 1000,
+                preloadImages: false,
+                lazy: true,
+                disableOnInteraction: true,
+                pauseOnMouseEnter: true,
+                slidesPerView: 4,
+                spaceBetween: 20,
+                freeMode: true,
+                grabCursor: true,
+                allowTouchMove: true,
+                watchOverflow: true,
+                initialSlide: 0,
+                autoHeight: false,
+                scrollbar: {
+                    el: section.querySelector('.swiper-scrollbar'),
+                    hide: false,
+                    draggable: true
                 },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 20
-                }
-            },
-            navigation: {
-                nextEl: ".product-promotion .nav-next",
-                prevEl: ".product-promotion .nav-prev",
-            },
-            on: {
-                init: function (swiper) {
+                mousewheel: {
+                    sensitivity: 1,
+                    forceToAxis: true,
+                    releaseOnEdges: true,
                 },
-                transitionStart: function (swiper) {
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    }
                 },
-                transitionEnd: function () { },
-                click(swiper) {
-                }
-            },
-        });
-    }
+                navigation: {
+                    nextEl: section.querySelector(".nav-next"),
+                    prevEl: section.querySelector(".nav-prev"),
+                },
+                on: {
+                    init: function (swiper) {
+                    },
+                    transitionStart: function (swiper) {
+                    },
+                    transitionEnd: function () { },
+                    click(swiper) {
+                    }
+                },
+            });
+        }
+    });
 }
 
 
@@ -304,36 +307,8 @@ function homeBannerSlider() {
 }
 
 function initProductDetail() {
-    // Gallery switching
-    const thumbItems = document.querySelectorAll(".gallery_thumb--item");
-    const mainItems = document.querySelectorAll(".gallery_main--item");
-
-    thumbItems.forEach((thumb) => {
-        thumb.addEventListener("click", () => {
-            const index = thumb.getAttribute("data-thumb");
-            
-            // Sync all thumbnails with this data-thumb
-            thumbItems.forEach((t) => {
-                if (t.getAttribute("data-thumb") === index) {
-                    t.classList.add("select");
-                } else {
-                    t.classList.remove("select");
-                }
-            });
-
-            // Switch main image
-            mainItems.forEach((main) => {
-                if (main.getAttribute("data-thumb") === index) {
-                    main.classList.add("select");
-                } else {
-                    main.classList.remove("select");
-                }
-            });
-        });
-    });
-
     // Color selection
-    const colorItems = document.querySelectorAll(".metadata_color-item");
+    const colorItems = document.querySelectorAll(".metadata_color-thumb");
     const colorLabel = document.getElementById("selected-color-label");
     colorItems.forEach((item) => {
         item.addEventListener("click", () => {
@@ -347,33 +322,28 @@ function initProductDetail() {
 
     // Size selection
     const sizeItems = document.querySelectorAll(".metadata_tag--item");
+    const sizeLabel = document.getElementById("selected-size-label");
     sizeItems.forEach((item) => {
         item.addEventListener("click", () => {
             sizeItems.forEach((i) => i.classList.remove("active"));
             item.classList.add("active");
+            if (sizeLabel) {
+                sizeLabel.textContent = item.textContent.trim();
+            }
         });
     });
 
-    // Quantity selector
-    const quantityInput = document.getElementById("quantity");
-    const plusBtn = document.querySelector(".metadata_cart--plus");
-    const minusBtn = document.querySelector(".metadata_cart--minus");
-
-    if (quantityInput) {
-        if (plusBtn) {
-            plusBtn.addEventListener("click", () => {
-                let val = parseInt(quantityInput.value) || 1;
-                quantityInput.value = val + 1;
+    // Quantity dropdown sync
+    const qtySelectContainer = document.querySelector(".metadata_cart-qty-select");
+    if (qtySelectContainer) {
+        const qtyItems = qtySelectContainer.querySelectorAll(".select-box li");
+        qtyItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const val = item.getAttribute("data-value");
+                console.log("Selected quantity:", val);
+                qtySelectContainer.setAttribute("data-selected-qty", val);
             });
-        }
-        if (minusBtn) {
-            minusBtn.addEventListener("click", () => {
-                let val = parseInt(quantityInput.value) || 1;
-                if (val > 1) {
-                    quantityInput.value = val - 1;
-                }
-            });
-        }
+        });
     }
 
     // Accordions

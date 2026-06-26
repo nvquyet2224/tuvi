@@ -1,0 +1,118 @@
+.section-countdown {
+  width: 100%;
+  margin-top: 3.75rem;
+  margin-bottom: 3.75rem;
+}
+.section-countdown .countdown-card {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
+  padding: 5.625rem 5rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.section-countdown .countdown-content {
+  max-width: 31.25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.section-countdown .countdown-title {
+  color: var(--global-color);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 1.125rem;
+  letter-spacing: -0.01em;
+}
+.section-countdown .countdown-desc {
+  color: #111111;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+}
+.section-countdown .countdown {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-countdown .countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 3.75rem;
+}
+.section-countdown .countdown-item .value {
+  color: var(--global-color);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.section-countdown .countdown-item .unit {
+  color: #111111;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.375rem;
+  text-transform: lowercase;
+}
+.section-countdown .countdown-separator {
+  color: #111111;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .section-countdown {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .section-countdown .countdown-card {
+    padding: 2.5rem 1.5rem;
+    background-position: 75% center;
+  }
+  .section-countdown .countdown-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+  }
+  .section-countdown .countdown-content {
+    max-width: 100%;
+  }
+  .section-countdown .countdown-title {
+    font-size: 2rem;
+  }
+  .section-countdown .countdown-desc {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-countdown .countdown {
+    gap: 0.75rem;
+  }
+  .section-countdown .countdown-item {
+    min-width: 2.75rem;
+  }
+  .section-countdown .countdown-item .value {
+    font-size: 2rem;
+  }
+  .section-countdown .countdown-item .unit {
+    font-size: 0.75rem;
+  }
+  .section-countdown .countdown-separator {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}

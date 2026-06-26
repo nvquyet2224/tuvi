@@ -7,7 +7,7 @@
 
         display: flex;
         align-items: center;
-        gap: f.rem(12);
+        gap: f.rem(10);
 
         li {
 
@@ -15,14 +15,15 @@
             span {
                 font-weight: 500;
                 text-decoration: none;
-                font-size: f.rem(12);
+                font-size: f.rem(14);
             }
 
-            a {
+            a,
+            span.sep {
                 color: #B4B4B4;
             }
 
-            span {
+            span.current {
                 color: #242420;
             }
 

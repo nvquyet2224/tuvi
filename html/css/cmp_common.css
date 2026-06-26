@@ -4,18 +4,19 @@
 .breadcrumb ul {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.625rem;
 }
 .breadcrumb ul li a,
 .breadcrumb ul li span {
   font-weight: 500;
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
-.breadcrumb ul li a {
+.breadcrumb ul li a,
+.breadcrumb ul li span.sep {
   color: #B4B4B4;
 }
-.breadcrumb ul li span {
+.breadcrumb ul li span.current {
   color: #242420;
 }
 
@@ -601,7 +602,7 @@ input[type=number] {
   height: 2rem;
   background-color: rgba(var(--global-colorA), 0);
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.333333333;
   letter-spacing: 0;
   cursor: pointer;
@@ -610,7 +611,7 @@ input[type=number] {
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 .paging-item.active, .paging-item:active {
-  background-color: rgba(var(--global-colorA), 1);
+  background-color: var(--global-color);
   color: #fff;
 }
 .paging-next, .paging-prev {
@@ -934,5 +935,54 @@ input[type=number] {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+.home-purpose_card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.home-purpose_card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 690/460;
+  overflow: hidden;
+}
+.home-purpose_card-img img {
+  width: 100%;
+  height: 100%;
+  -webkit-object-fit: cover;
+  object-fit: cover;
+}
+.home-purpose_card-content {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.home-purpose_card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--global-color);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.home-purpose_card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.home-purpose_card-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 0.625rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .home-purpose_card-title {
+    font-size: 1.5rem;
+  }
+  .home-purpose_card-desc {
+    font-size: 0.875rem;
   }
 }

@@ -4,7 +4,6 @@
   position: relative;
   width: 100%;
   height: auto;
-  margin-bottom: f.rem(60);
 
   &--img {
     position: relative;
@@ -19,7 +18,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      background: rgba(0, 0, 0, 0.35) !important;
+      background: rgba(0, 0, 0, 0.20)
     }
 
     img {
@@ -33,63 +32,41 @@
     width: 100%;
     height: auto;
     left: 0;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    text-align: center;
-    color: #fff !important;
+    bottom: f.rem(40);
     padding: 0 f.rem(20);
+    text-align: center;
     z-index: 2;
 
     .breadcrumb {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: f.rem(8) !important;
-      font-size: f.rem(16) !important;
-      font-weight: 500 !important;
-      margin-bottom: f.rem(16) !important;
-      color: rgba(255, 255, 255, 0.8) !important;
+      ul {
+        justify-content: center;
+        margin-bottom: f.rem(20);
 
-      a {
-        color: rgba(255, 255, 255, 0.8) !important;
-        text-decoration: none !important;
-        transition: color 0.3s ease !important;
+        li {
 
-        &:hover {
-          color: #fff !important;
+          a,
+          span {
+            color: #fff;
+          }
         }
-      }
-
-      .sep {
-        color: rgba(255, 255, 255, 0.5) !important;
-      }
-
-      .current {
-        color: #fff !important;
-        text-transform: capitalize !important;
       }
     }
 
     .title_block {
-      margin-bottom: f.rem(20) !important;
 
       h1 {
-        color: #fff !important;
-        font-size: f.rem(64) !important;
-        font-weight: 800 !important;
-        line-height: 1.1 !important;
-        letter-spacing: f.rem(-1) !important;
+        color: #fff;
+        font-size: f.rem(80);
+        letter-spacing: -0.02em;
+        margin-bottom: f.rem(20);
+        line-height: 90%;
       }
     }
 
     .sub-banner--desc {
-      font-size: f.rem(20) !important;
-      font-weight: 400 !important;
-      line-height: 1.5 !important;
-      max-width: f.rem(600) !important;
-      margin: 0 auto !important;
-      color: rgba(255, 255, 255, 0.9) !important;
+      color: #fff;
+      font-size: f.rem(20);
+      font-weight: 500;
     }
   }
 }
@@ -110,23 +87,12 @@
     }
 
     &--txt {
-      .breadcrumb {
-        font-size: f.rem(12) !important;
-        margin-bottom: f.rem(8) !important;
-      }
-
       .title_block {
-        margin-bottom: f.rem(8) !important;
 
-        h1 {
-          font-size: f.rem(28) !important;
-        }
+        h1 {}
       }
 
-      .sub-banner--desc {
-        font-size: f.rem(14) !important;
-        max-width: 90% !important;
-      }
+      .sub-banner--desc {}
     }
   }
 }

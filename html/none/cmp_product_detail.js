@@ -17,7 +17,7 @@ var cmp_product_detail;
   \**********************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_product_detail_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/_product-detail.scss */ \"./src/sass/_product-detail.scss\");\n\n\n//# sourceURL=webpack://modules/./src/js/product-detail.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_product_detail_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/_product-detail.scss */ \"./src/sass/_product-detail.scss\");\n/* harmony import */ var _sass_service_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../sass/_service.scss */ \"./src/sass/_service.scss\");\n\n\n\n//# sourceURL=webpack://modules/./src/js/product-detail.js?\n}");
 
 /***/ },
 
@@ -28,6 +28,16 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sa
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://modules/./src/sass/_product-detail.scss?\n}");
+
+/***/ },
+
+/***/ "./src/sass/_service.scss"
+/*!********************************!*\
+  !*** ./src/sass/_service.scss ***!
+  \********************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://modules/./src/sass/_service.scss?\n}");
 
 /***/ }
 

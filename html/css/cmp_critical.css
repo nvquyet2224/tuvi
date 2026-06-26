@@ -1,6 +1,6 @@
 :root {
   --global-color: #C93640;
-  --global-colorA: 1, 90, 171;
+  --global-colorA: 201, 54, 64;
   --global-color-dark: #07274a;
   --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --g-blue: linear-gradient(180deg,
@@ -224,6 +224,12 @@ lottie-player {
   width: 1rem;
   height: 1rem;
 }
+.link-but.stroke-black {
+  border: 1px solid #000;
+  -webkit-border-radius: 1.875rem;
+  border-radius: 1.875rem;
+  background-color: #fff;
+}
 
 .title_block .sub-title {
   color: var(--global-color);
@@ -251,50 +257,6 @@ lottie-player {
 }
 .title_block .sub-search input::placeholder {
   color: #6D6D6D;
-}
-
-.sub-banner {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-bottom: 3.75rem;
-}
-.sub-banner--img {
-  position: relative;
-  width: 100%;
-  height: auto;
-  line-height: 0;
-}
-.sub-banner--img::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 38.6%, rgba(0, 0, 0, 0.5) 84.16%);
-}
-.sub-banner--img img {
-  width: 100%;
-  height: auto;
-}
-.sub-banner--txt {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  text-align: center;
-}
-.sub-banner--txt .title_block .sub-title,
-.sub-banner--txt .title_block h1 {
-  color: #fff;
-  font-size: 2.25rem;
-}
-.sub-banner--txt .title_block h1 {
-  font-weight: 700;
 }
 
 .select {
@@ -341,6 +303,8 @@ lottie-player {
   -webkit-transform: translateY(5px);
   transform: translateY(5px);
   z-index: 10;
+  -webkit-border-radius: 0.75rem;
+  border-radius: 0.75rem;
   display: none;
 }
 .select-box ul {
@@ -406,22 +370,6 @@ lottie-player {
     max-width: 14.375rem;
     font-size: 0.875rem;
     padding: 0 2.5rem;
-  }
-  .sub-banner {
-    margin-bottom: 1.25rem;
-  }
-  .sub-banner--img {
-    aspect-ratio: 375/180;
-  }
-  .sub-banner--img img {
-    width: 100%;
-    height: 100%;
-    -webkit-object-fit: cover;
-    object-fit: cover;
-  }
-  .sub-banner--txt .title_block .sub-title,
-  .sub-banner--txt .title_block h1 {
-    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 480px) {
