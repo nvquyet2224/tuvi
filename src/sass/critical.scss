@@ -8,11 +8,9 @@
   --global-colorA: 201, 54, 64;
   --global-color-dark: #07274a;
   --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
-  --g-blue: linear-gradient(
-    180deg,
-    rgba(10, 124, 220, 0) 23.17%,
-    rgba(5, 92, 165, 0.95) 88.61%
-  );
+  --g-blue: linear-gradient(180deg,
+      rgba(10, 124, 220, 0) 23.17%,
+      rgba(5, 92, 165, 0.95) 88.61%);
 }
 
 body {
@@ -227,6 +225,7 @@ lottie-player {
     background-color: #fff;
     color: var(--global-color);
     border: 1px solid #fff;
+
     &:hover {
       background-color: var(--global-color);
       color: #fff;
@@ -239,8 +238,9 @@ lottie-player {
 
   &.underline {
     text-decoration: underline;
-    text-underline-offset: 3px; 
+    text-underline-offset: 3px;
     height: auto;
+
     &:hover {
       color: var(--global-color);
     }
@@ -256,6 +256,7 @@ lottie-player {
     -webkit-border-radius: f.rem(30);
     border-radius: f.rem(30);
     background-color: #fff;
+
     &:hover,
     &.current {
       background-color: var(--global-color);
@@ -300,60 +301,6 @@ lottie-player {
   }
 }
 
-// .sub-banner {
-//   position: relative;
-//   width: 100%;
-//   height: auto;
-//   margin-bottom: f.rem(60);
-
-//   &--img {
-//     position: relative;
-//     width: 100%;
-//     height: auto;
-//     line-height: 0;
-
-//     &::after {
-//       content: "";
-//       width: 100%;
-//       height: 100%;
-//       position: absolute;
-//       left: 0;
-//       top: 0;
-//       background: linear-gradient(180deg,
-//           rgba(0, 0, 0, 0) 38.6%,
-//           rgba(0, 0, 0, 0.5) 84.16%);
-//     }
-
-//     img {
-//       width: 100%;
-//       height: auto;
-//     }
-//   }
-
-//   &--txt {
-//     position: absolute;
-//     width: 100%;
-//     height: auto;
-//     left: 0;
-//     top: 50%;
-//     -webkit-transform: translateY(-50%);
-//     transform: translateY(-50%);
-//     text-align: center;
-
-//     .title_block {
-
-//       .sub-title,
-//       h1 {
-//         color: #fff;
-//         font-size: f.rem(36);
-//       }
-
-//       h1 {
-//         font-weight: 700;
-//       }
-//     }
-//   }
-// }
 
 .select {
   position: relative;
@@ -365,6 +312,15 @@ lottie-player {
   &.open {
     .select-box {
       display: block;
+    }
+  }
+
+  &.is-top {
+    .select-box {
+      top: auto;
+      bottom: 100%;
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
     }
   }
 
@@ -380,16 +336,15 @@ lottie-player {
   }
 
   &-arrow {
-    width: f.rem(18);
-    height: f.rem(18);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    width: f.rem(11);
+    height: f.rem(6);
+    display: inline-block;
     margin-left: f.rem(10);
+    background: url("../images/select-arrow.svg") no-repeat center;
+    background-size: contain;
 
     svg {
-      width: f.rem(12);
-      height: f.rem(6);
+      display: none !important;
     }
   }
 
@@ -440,8 +395,7 @@ lottie-player {
   }
 }
 
-@supports (-webkit-text-stroke: #fcd535) {
-}
+@supports (-webkit-text-stroke: #fcd535) {}
 
 @media screen and (min-width: 1025px) {
   .select {
@@ -470,6 +424,7 @@ lottie-player {
 }
 
 @media screen and (max-width: 1023px) {
+
   h1,
   .h1 {
     font-size: f.rem(64);

@@ -5,7 +5,13 @@
     background-color: var(--global-color);
     color: #ffffff;
     padding: f.rem(50) f.rem(20);
-    overflow: hidden;
+    a:not(.footer_social-icon):not(.footer_logo) {
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
 
     .shape_bg {
         position: absolute;
@@ -192,6 +198,73 @@
         font-size: f.rem(14);
         color: rgba(255, 255, 255, 0.6);
         font-weight: 400;
+    }
+}
+
+.sticky-widgets {
+    position: fixed;
+    bottom: f.rem(45);
+    right: f.rem(20);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: f.rem(12);
+    align-items: center;
+
+    .sticky-chat {
+        width: f.rem(48);
+        height: f.rem(48);
+        border-radius: 50%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s, box-shadow 0.2s;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-inner {
+            width: f.rem(34);
+            height: f.rem(34);
+            border-radius: 50%;
+            background-color: var(--global-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .sticky-scroll {
+        width: f.rem(48);
+        height: f.rem(48);
+        border-radius: 50%;
+        border: 1.5px solid #ffffff;
+        background-color: rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.2s, border-color 0.2s, transform 0.3s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        svg {
+            transition: transform 0.3s ease;
+        }
+
+        &.is-top {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
     }
 }
 

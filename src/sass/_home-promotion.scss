@@ -4,6 +4,10 @@
   background: #ffffff;
   padding: f.rem(100) 0;
 
+  &.similar-styles {
+    padding: f.rem(80) 0 0 0;
+  }
+
   &_wrap {
     padding: 0 f.rem(20);
 
@@ -89,9 +93,11 @@
   }
 }
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
+}
 
-@media screen and (min-width: 1024px) and (max-width: 1200px) {}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+}
 
 @media screen and (max-width: 1023px) {
   .products {
@@ -102,7 +108,7 @@
     }
 
     .title_block {
-      padding: 0 f.rem(12);
+      //padding: 0 f.rem(12);
       margin-bottom: f.rem(20);
       display: flex;
       justify-content: space-between;
@@ -118,6 +124,5 @@
       gap: f.rem(24) f.rem(8);
       padding: 0 f.rem(12);
     }
-
   }
 }

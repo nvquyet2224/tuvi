@@ -2,6 +2,9 @@
   background: #ffffff;
   padding: 6.25rem 0;
 }
+.products.similar-styles {
+  padding: 5rem 0 0 0;
+}
 .products_wrap {
   padding: 0 1.25rem;
 }
@@ -86,7 +89,6 @@
     padding: 0 0 0 0.75rem;
   }
   .products .title_block {
-    padding: 0 0.75rem;
     margin-bottom: 1.25rem;
     display: flex;
     justify-content: space-between;

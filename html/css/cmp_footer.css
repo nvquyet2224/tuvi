@@ -3,7 +3,12 @@
   background-color: var(--global-color);
   color: #ffffff;
   padding: 3.125rem 1.25rem;
-  overflow: hidden;
+}
+.footer a:not(.footer_social-icon):not(.footer_logo) {
+  transition: opacity 0.2s ease;
+}
+.footer a:not(.footer_social-icon):not(.footer_logo):hover {
+  opacity: 0.7;
 }
 .footer .shape_bg {
   position: absolute;
@@ -162,6 +167,64 @@
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
+}
+
+.sticky-widgets {
+  position: fixed;
+  bottom: 2.8125rem;
+  right: 1.25rem;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+.sticky-widgets .sticky-chat {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.sticky-widgets .sticky-chat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.sticky-widgets .sticky-chat .chat-inner {
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 50%;
+  background-color: var(--global-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sticky-widgets .sticky-scroll {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.3s;
+}
+.sticky-widgets .sticky-scroll:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+.sticky-widgets .sticky-scroll svg {
+  transition: transform 0.3s ease;
+}
+.sticky-widgets .sticky-scroll.is-top svg {
+  transform: rotate(180deg);
 }
 
 @media screen and (max-width: 1023px) {

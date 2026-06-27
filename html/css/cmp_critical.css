@@ -3,11 +3,9 @@
   --global-colorA: 201, 54, 64;
   --global-color-dark: #07274a;
   --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
-  --g-blue: linear-gradient(
-    180deg,
-    rgba(10, 124, 220, 0) 23.17%,
-    rgba(5, 92, 165, 0.95) 88.61%
-  );
+  --g-blue: linear-gradient(180deg,
+      rgba(10, 124, 220, 0) 23.17%,
+      rgba(5, 92, 165, 0.95) 88.61%);
 }
 
 body {
@@ -287,6 +285,12 @@ lottie-player {
 .select.open .select-box {
   display: block;
 }
+.select.is-top .select-box {
+  top: auto;
+  bottom: 100%;
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
 .select-selected {
   font-weight: 600;
 }
@@ -297,16 +301,15 @@ lottie-player {
   cursor: pointer;
 }
 .select-arrow {
-  width: 1.125rem;
-  height: 1.125rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: 0.6875rem;
+  height: 0.375rem;
+  display: inline-block;
   margin-left: 0.625rem;
+  background: url(../images/select-arrow.svg) no-repeat center;
+  background-size: contain;
 }
 .select-arrow svg {
-  width: 0.75rem;
-  height: 0.375rem;
+  display: none !important;
 }
 .select-box {
   position: absolute;

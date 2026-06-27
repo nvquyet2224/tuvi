@@ -1,5 +1,6 @@
 @use "function" as f;
 @use "breadcrumb";
+@use "popup";
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -71,6 +72,7 @@ input[type="number"] {
   flex-direction: column;
 
   &-img {
+    position: relative;
     line-height: 0;
     //width: f.rem(335);
     //height: f.rem(326);
@@ -94,6 +96,51 @@ input[type="number"] {
       // max-height: 100%;
       -webkit-transition: transform 0.3s ease-in-out;
       transition: transform 0.3s ease-in-out;
+    }
+
+    &_cart-btn {
+      position: absolute;
+      bottom: f.rem(16);
+      right: f.rem(16);
+      width: f.rem(36);
+      height: f.rem(36);
+      border-radius: 50%;
+      background-color: #ffffff;
+      box-shadow: 0 f.rem(2) f.rem(8) rgba(0, 0, 0, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+
+      svg {
+        width: f.rem(18);
+        height: f.rem(18);
+        color: #111111;
+        stroke: currentColor;
+        fill: none;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        background-color: var(--global-color);
+        svg {
+          color: #ffffff;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        opacity: 0;
+        transform: translateY(f.rem(10));
+        pointer-events: none;
+
+        .product:hover & {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+      }
     }
   }
 

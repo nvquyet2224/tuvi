@@ -568,7 +568,7 @@ function openPopup(byThis) {
   const oldPop = document.querySelector(".popup.open");
   const body = document.querySelector("body");
   if (oldPop) {
-    curPop.classList.remove("open");
+    oldPop.classList.remove("open");
   }
   const curPop = document.querySelector(byThis);
   if (curPop) {
@@ -584,6 +584,113 @@ function closePopup(byThis) {
     oldPop.classList.remove("open");
   }
   body.classList.remove("noScroll");
+}
+
+function initQuickViewPopup() {
+  document.addEventListener("click", (e) => {
+    const cartBtn = e.target.closest(".product-img_cart-btn");
+    if (cartBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      openPopup("#quickViewPop");
+    }
+  });
+
+  const popup = document.querySelector("#quickViewPop");
+  if (!popup) return;
+
+  const closeBtn = popup.querySelector(".popup-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      closePopup("#quickViewPop");
+    });
+  }
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      closePopup("#quickViewPop");
+    }
+  });
+
+  const swatches = popup.querySelectorAll(".swatch-item");
+  const colorText = popup.querySelector("#quickViewColorText");
+  const mainImg = popup.querySelector("#quickViewImg");
+
+  swatches.forEach((swatch) => {
+    swatch.addEventListener("click", () => {
+      swatches.forEach((s) => s.classList.remove("active"));
+      swatch.classList.add("active");
+
+      const color = swatch.getAttribute("data-color");
+      const imgPath = swatch.getAttribute("data-img");
+
+      if (colorText) colorText.textContent = color;
+      if (mainImg) mainImg.src = imgPath;
+    });
+  });
+}
+
+function initSizeGuidePopup() {
+  let wasQuickViewOpen = false;
+
+  document.addEventListener("click", (e) => {
+    const sizeChartBtn = e.target.closest(".size-chart-link");
+    if (sizeChartBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const quickView = document.querySelector("#quickViewPop");
+      if (quickView && quickView.classList.contains("open")) {
+        wasQuickViewOpen = true;
+        closePopup("#quickViewPop");
+      } else {
+        wasQuickViewOpen = false;
+      }
+
+      openPopup("#sizeGuidePop");
+    }
+  });
+
+  const popup = document.querySelector("#sizeGuidePop");
+  if (!popup) return;
+
+  const closeBtn = popup.querySelector(".popup-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      closePopup("#sizeGuidePop");
+      if (wasQuickViewOpen) {
+        openPopup("#quickViewPop");
+        wasQuickViewOpen = false;
+      }
+    });
+  }
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      closePopup("#sizeGuidePop");
+      if (wasQuickViewOpen) {
+        openPopup("#quickViewPop");
+        wasQuickViewOpen = false;
+      }
+    }
+  });
+
+  const tabButtons = popup.querySelectorAll(".size-guide-tab-header .tab-btn");
+  const tabContents = popup.querySelectorAll(".size-guide-tab-content");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      tabContents.forEach((c) => c.classList.remove("active"));
+
+      btn.classList.add("active");
+      const tabId = btn.getAttribute("data-tab");
+      const targetContent = popup.querySelector(`#${tabId}`);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
+    });
+  });
 }
 
 function highlightActiveNav() {
@@ -603,6 +710,31 @@ function highlightActiveNav() {
 window.addEventListener("scroll", loadImagesOnScroll);
 window.addEventListener("load", loadImagesOnScroll);
 
+function initStickyWidgets() {
+  const stickyScroll = document.querySelector('.sticky-scroll');
+  if (stickyScroll) {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        stickyScroll.classList.add('is-top');
+      } else {
+        stickyScroll.classList.remove('is-top');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    stickyScroll.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (stickyScroll.classList.contains('is-top')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+      }
+    });
+  }
+}
+
 (function () {
   handleSearch();
   showCTAAddToCart();
@@ -619,6 +751,9 @@ window.addEventListener("load", loadImagesOnScroll);
 
   toggleSelect();
   highlightActiveNav();
+  initQuickViewPopup();
+  initSizeGuidePopup();
+  initStickyWidgets();
 
   // marquee
   // if (document.querySelector(".marquee__ctn")) {

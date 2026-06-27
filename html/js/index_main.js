@@ -145,8 +145,8 @@ function productPromotionSlider() {
                 },
                 breakpoints: {
                     320: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 20
+                        slidesPerView: 1.2,
+                        spaceBetween: 8
                     },
                     1024: {
                         slidesPerView: 4,
