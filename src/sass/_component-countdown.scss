@@ -2,24 +2,23 @@
 
 .section-countdown {
   width: 100%;
-  margin-top: f.rem(60);
-  margin-bottom: f.rem(60);
+  margin-bottom: f.rem(40);
 
   .countdown-card {
     position: relative;
     width: 100%;
+    aspect-ratio: 1440 / 580;
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;
-    border-radius: f.rem(8);
-    padding: f.rem(90) f.rem(80);
+    padding: 0 f.rem(80);
     display: flex;
     align-items: center;
     overflow: hidden;
   }
 
   .countdown-content {
-    max-width: f.rem(500);
+    max-width: f.rem(620);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -28,20 +27,20 @@
 
   .countdown-title {
     color: var(--global-color); // #C93640
-    font-size: f.rem(48);
+    font-size: f.rem(64);
     font-weight: 700;
     line-height: 1.1;
     text-transform: uppercase;
-    margin-bottom: f.rem(18);
-    letter-spacing: -0.01em;
+    margin-bottom: f.rem(16);
   }
 
   .countdown-desc {
-    color: #111111;
-    font-size: f.rem(16);
-    line-height: 1.5;
-    margin-bottom: f.rem(36);
-    font-weight: 400;
+    color: #000;
+    font-size: f.rem(20);
+    line-height: 1.4;
+    margin-bottom: f.rem(32);
+    font-weight: 500;
+    text-align: justify;
   }
 
   .countdown {
@@ -53,27 +52,27 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      min-width: f.rem(60);
+      //min-width: f.rem(60);
 
       .value {
         color: var(--global-color); // #C93640
-        font-size: f.rem(44);
+        font-size: f.rem(38);
         font-weight: 700;
         line-height: 1;
       }
 
       .unit {
-        color: #111111;
-        font-size: f.rem(14);
-        font-weight: 500;
+        color: #000;
+        font-size: f.rem(20);
+        font-weight: 400;
         margin-top: f.rem(6);
         text-transform: lowercase;
       }
     }
 
     &-separator {
-      color: #111111;
-      font-size: f.rem(28);
+      color: #000;
+      font-size: f.rem(20);
       font-weight: 500;
       line-height: 1;
       margin-bottom: f.rem(20); // offset vertical alignment to match values
@@ -84,23 +83,10 @@
 // Media queries for responsiveness
 @media screen and (max-width: 1023px) {
   .section-countdown {
-    margin-top: f.rem(40);
-    margin-bottom: f.rem(40);
-
     .countdown-card {
       padding: f.rem(40) f.rem(24);
-      background-position: 75% center;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(255, 255, 255, 0.85);
-        z-index: 1;
-      }
+      aspect-ratio: 375 / 260;
+      background-position: center center;
     }
 
     .countdown-content {
@@ -120,8 +106,6 @@
       gap: f.rem(12);
 
       &-item {
-        min-width: f.rem(44);
-
         .value {
           font-size: f.rem(32);
         }

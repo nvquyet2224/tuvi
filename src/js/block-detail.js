@@ -8,6 +8,8 @@ function initDiscoverSlider() {
       effect: "slide",
       loop: false,
       speed: 1000,
+      freeMode: true,
+      grabCursor: true,
       allowTouchMove: true,
       watchOverflow: true,
       initialSlide: 0,
@@ -32,8 +34,7 @@ function initDiscoverSlider() {
         },
         1024: {
           slidesPerView: 2,
-          spaceBetween: 20,
-          allowTouchMove: false
+          spaceBetween: 20
         }
       }
     });

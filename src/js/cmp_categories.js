@@ -18,19 +18,23 @@
     };
 
     // Ẩn/hiện thông báo không tìm thấy sản phẩm
+    const setAmountText = (text) => {
+        if (elements.amount) {
+            elements.amount.innerHTML = `<svg><use xlink:href="#icon-filter"></use></svg>${text}`;
+        }
+    };
+
     const toggleNotFound = (show) => {
         if (elements.result) elements.result.classList.toggle("hide", show);
         if (elements.paging) elements.paging.classList.toggle("hide", show);
         if (elements.empty) elements.empty.classList.toggle("hide", !show);
         if (show) {
-            if (elements.amount) elements.amount.innerHTML = "0 sản phẩm";
+            setAmountText("0 sản phẩm");
         } else {
-            if (elements.amount) {
-                if (checkedData.size > 2) {
-                    elements.amount.innerHTML = "24 sản phẩm";
-                } else {
-                    elements.amount.innerHTML = "134 sản phẩm";
-                }
+            if (checkedData.size > 2) {
+                setAmountText("24 sản phẩm");
+            } else {
+                setAmountText("134 sản phẩm");
             }
         }
     };
@@ -87,6 +91,8 @@
     // Ẩn bộ lọc
     const hideFilter = () => {
         if (elements.elmFilter) elements.elmFilter.classList.remove("open");
+        const filterOverlay = document.querySelector(".filter__overlay");
+        if (filterOverlay) filterOverlay.classList.remove("open");
         document.querySelector('body').classList.remove('no-scroll');
     };
 
@@ -94,6 +100,8 @@
     const handleFilterEvents = () => {
         if (elements.btnReset) elements.btnReset.addEventListener("click", hideFilter);
         if (elements.btnApply) elements.btnApply.addEventListener("click", hideFilter);
+        const filterOverlay = document.querySelector(".filter__overlay");
+        if (filterOverlay) filterOverlay.addEventListener("click", hideFilter);
     };
 
     // Xử lý checkbox và tags
@@ -133,6 +141,22 @@
             inputs.forEach((input) => (input.checked = false));
             renderTags();
             toggleDeleteButton();
+            toggleNotFound(false);
+
+            // Reset price slider if jQuery UI slider is initialized
+            const $slider = $("#slider-range");
+            if ($slider.length && typeof $slider.slider === "function") {
+                const $inputLeft = $("#number-left");
+                const $inputRight = $("#number-right");
+                const min = parseInt($inputLeft.attr("min"), 10) || 0;
+                const max = parseInt($inputRight.attr("max"), 10) || 30000000;
+                const numberFormatter = new Intl.NumberFormat("vi-VN");
+                const formatVND = (value) => value === 0 ? "0" : `${numberFormatter.format(value)} đ`;
+
+                $slider.slider("values", [min, max]);
+                $inputLeft.val(formatVND(min));
+                $inputRight.val(formatVND(max));
+            }
         };
 
         inputs.forEach((input) => {

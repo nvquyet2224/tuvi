@@ -69,6 +69,7 @@ function lookSlider() {
             effect: "slide",
             loop: false,
             speed: 1000,
+            grabCursor: true,
             preloadImages: false,
             lazy: true,
             disableOnInteraction: true,
@@ -177,6 +178,7 @@ function homeBestsellerSlider() {
             effect: "slide",
             loop: false,
             speed: 1000,
+            grabCursor: true,
             slidesPerView: 1,
             spaceBetween: 30,
             allowTouchMove: true,
@@ -202,6 +204,7 @@ function homeWhySlider() {
             effect: "slide",
             loop: false,
             speed: 1000,
+            grabCursor: true,
             slidesPerView: 1,
             spaceBetween: 30,
             allowTouchMove: true,
@@ -226,6 +229,8 @@ function homePurposeSlider() {
             effect: "slide",
             loop: false,
             speed: 1000,
+            freeMode: true,
+            grabCursor: true,
             allowTouchMove: true,
             watchOverflow: true,
             initialSlide: 0,
@@ -246,8 +251,7 @@ function homePurposeSlider() {
                 },
                 1024: {
                     slidesPerView: 2,
-                    spaceBetween: 20,
-                    allowTouchMove: false
+                    spaceBetween: 20
                 }
             }
         });
@@ -289,6 +293,7 @@ function homeBannerSlider() {
             effect: "slide",
             loop: true,
             speed: 1000,
+            grabCursor: true,
             slidesPerView: 1,
             spaceBetween: 0,
             allowTouchMove: true,

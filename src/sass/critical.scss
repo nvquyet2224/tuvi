@@ -4,13 +4,15 @@
 //@use "banner";
 
 :root {
-  --global-color: #C93640;
+  --global-color: #c93640;
   --global-colorA: 201, 54, 64;
   --global-color-dark: #07274a;
-  --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --g-blue: linear-gradient(180deg,
-      rgba(10, 124, 220, 0) 23.17%,
-      rgba(5, 92, 165, 0.95) 88.61%);
+  --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --g-blue: linear-gradient(
+    180deg,
+    rgba(10, 124, 220, 0) 23.17%,
+    rgba(5, 92, 165, 0.95) 88.61%
+  );
 }
 
 body {
@@ -202,6 +204,8 @@ lottie-player {
   -webkit-border-radius: f.rem(60);
   border-radius: f.rem(60);
   font-family: "Montserrat", sans-serif;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &.transparent {
     background-color: transparent;
@@ -221,7 +225,12 @@ lottie-player {
 
   &.white {
     background-color: #fff;
-    color: var(--global-color)
+    color: var(--global-color);
+    border: 1px solid #fff;
+    &:hover {
+      background-color: var(--global-color);
+      color: #fff;
+    }
   }
 
   &.cl-white {
@@ -230,7 +239,11 @@ lottie-player {
 
   &.underline {
     text-decoration: underline;
+    text-underline-offset: 3px; 
     height: auto;
+    &:hover {
+      color: var(--global-color);
+    }
   }
 
   svg {
@@ -243,6 +256,12 @@ lottie-player {
     -webkit-border-radius: f.rem(30);
     border-radius: f.rem(30);
     background-color: #fff;
+    &:hover,
+    &.current {
+      background-color: var(--global-color);
+      border-color: var(--global-color);
+      color: #fff;
+    }
   }
 }
 
@@ -275,7 +294,7 @@ lottie-player {
       padding: 0 f.rem(48);
 
       &::placeholder {
-        color: #6D6D6D;
+        color: #6d6d6d;
       }
     }
   }
@@ -419,10 +438,10 @@ lottie-player {
       }
     }
   }
-
 }
 
-@supports (-webkit-text-stroke: #fcd535) {}
+@supports (-webkit-text-stroke: #fcd535) {
+}
 
 @media screen and (min-width: 1025px) {
   .select {
@@ -445,15 +464,12 @@ lottie-player {
 }
 
 @media screen and (min-width: 1024px) {
-
   .sp {
     display: none !important;
   }
 }
 
-
 @media screen and (max-width: 1023px) {
-
   h1,
   .h1 {
     font-size: f.rem(64);
@@ -510,7 +526,6 @@ lottie-player {
   //     }
   //   }
   // }
-
 }
 
 @media screen and (max-width: 480px) {

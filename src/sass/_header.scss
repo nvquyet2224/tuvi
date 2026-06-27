@@ -399,31 +399,31 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
         top: f.rem(0);
 
-        .header-top {
-            //background-color: var(--global-color);
-        }
+        // .header-top {
+        //     //background-color: var(--global-color);
+        // }
 
-        .header-mid {
-            //background-color: #fff;
+        // .header-mid {
+        //     //background-color: #fff;
 
-            svg {
-                filter: invert(0);
-            }
-        }
+        //     svg {
+        //         filter: invert(0);
+        //     }
+        // }
 
-        .nav-menu>li>a,
-        .nav-menu>li>span,
-        .header-action .user-caption {
-            color: #000;
-        }
+        // .nav-menu>li>a,
+        // .nav-menu>li>span,
+        // .header-action .user-caption {
+        //     color: #000;
+        // }
 
-        .header-action .search {
-            border-color: #000;
+        // .header-action .search {
+        //     border-color: #000;
 
-            .search-input {
-                color: #000;
-            }
-        }
+        //     .search-input {
+        //         color: #000;
+        //     }
+        // }
     }
 
     &.open-menu {

@@ -2,29 +2,8 @@
   background-color: #ffffff;
   padding: 3.75rem 0 6.25rem 0;
 }
-.block-detail_breadcrumbs {
-  display: flex;
+.block-detail .breadcrumb ul {
   justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8125rem;
-  color: #888888;
-  margin-bottom: 1.5rem;
-  text-transform: capitalize;
-}
-.block-detail_breadcrumbs a {
-  color: #888888;
-  transition: color 0.3s ease;
-}
-.block-detail_breadcrumbs a:hover {
-  color: var(--global-color);
-}
-.block-detail_breadcrumbs .divider {
-  color: #cccccc;
-}
-.block-detail_breadcrumbs .current {
-  color: #111111;
-  font-weight: 500;
 }
 .block-detail_main-title {
   text-align: center;
@@ -100,15 +79,20 @@
   color: #555555;
   transition: all 0.3s ease;
 }
-.block-detail_author-row .social-share .share-btn svg {
+.block-detail_author-row .social-share .share-btn svg,
+.block-detail_author-row .social-share .share-btn img {
   width: 1rem;
   height: 1rem;
   fill: currentColor;
+  object-fit: contain;
 }
 .block-detail_author-row .social-share .share-btn:hover {
-  background-color: #111111;
+  background-color: var(--global-color);
   color: #ffffff;
-  border-color: #111111;
+  border-color: var(--global-color);
+}
+.block-detail_author-row .social-share .share-btn:hover img {
+  filter: brightness(0) invert(1);
 }
 .block-detail_body {
   display: grid;
@@ -220,9 +204,6 @@
   .block-detail {
     padding: 2.5rem 0 3.75rem 0;
   }
-  .block-detail_breadcrumbs {
-    margin-bottom: 1rem;
-  }
   .block-detail_main-title {
     font-size: 2rem;
     margin-bottom: 0.75rem;
@@ -263,7 +244,7 @@
 }
 .discover-blogs {
   padding: 5rem 0;
-  border-top: 1px solid #eee;
+  background-color: #F1F1F1;
 }
 .discover-blogs_header {
   display: flex;
@@ -323,10 +304,13 @@
 .discover-blogs .home-purpose_card {
   background-color: #fff;
 }
+.discover-blogs .discoverBlogsSlider {
+  padding-bottom: 2.5rem;
+}
 
 @media screen and (max-width: 1023px) {
   .discover-blogs {
-    padding: 3rem 0;
+    padding: 3rem 0.75rem;
   }
   .discover-blogs_header {
     margin-bottom: 1.5rem;

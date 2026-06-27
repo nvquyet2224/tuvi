@@ -1,22 +1,21 @@
 .section-countdown {
   width: 100%;
-  margin-top: 3.75rem;
-  margin-bottom: 3.75rem;
+  margin-bottom: 2.5rem;
 }
 .section-countdown .countdown-card {
   position: relative;
   width: 100%;
+  aspect-ratio: 1440/580;
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-  border-radius: 0.5rem;
-  padding: 5.625rem 5rem;
+  padding: 0 5rem;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 .section-countdown .countdown-content {
-  max-width: 31.25rem;
+  max-width: 38.75rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -24,19 +23,19 @@
 }
 .section-countdown .countdown-title {
   color: var(--global-color);
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
   text-transform: uppercase;
-  margin-bottom: 1.125rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
 }
 .section-countdown .countdown-desc {
-  color: #111111;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 2.25rem;
-  font-weight: 400;
+  color: #000;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-align: justify;
 }
 .section-countdown .countdown {
   display: flex;
@@ -47,47 +46,33 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 3.75rem;
 }
 .section-countdown .countdown-item .value {
   color: var(--global-color);
-  font-size: 2.75rem;
+  font-size: 2.375rem;
   font-weight: 700;
   line-height: 1;
 }
 .section-countdown .countdown-item .unit {
-  color: #111111;
-  font-size: 0.875rem;
-  font-weight: 500;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 400;
   margin-top: 0.375rem;
   text-transform: lowercase;
 }
 .section-countdown .countdown-separator {
-  color: #111111;
-  font-size: 1.75rem;
+  color: #000;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1;
   margin-bottom: 1.25rem;
 }
 
 @media screen and (max-width: 1023px) {
-  .section-countdown {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
   .section-countdown .countdown-card {
     padding: 2.5rem 1.5rem;
-    background-position: 75% center;
-  }
-  .section-countdown .countdown-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.85);
-    z-index: 1;
+    aspect-ratio: 375/260;
+    background-position: center center;
   }
   .section-countdown .countdown-content {
     max-width: 100%;
@@ -101,9 +86,6 @@
   }
   .section-countdown .countdown {
     gap: 0.75rem;
-  }
-  .section-countdown .countdown-item {
-    min-width: 2.75rem;
   }
   .section-countdown .countdown-item .value {
     font-size: 2rem;

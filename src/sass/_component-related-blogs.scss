@@ -2,7 +2,7 @@
 
 .discover-blogs {
   padding: f.rem(80) 0;
-  border-top: 1px solid #eee;
+  background-color: #F1F1F1;
 
   &_header {
     display: flex;
@@ -67,11 +67,15 @@
   .home-purpose_card {
     background-color: #fff;
   }
+
+  .discoverBlogsSlider {
+    padding-bottom: f.rem(40);
+  }
 }
 
 @media screen and (max-width: 1023px) {
   .discover-blogs {
-    padding: f.rem(48) 0;
+    padding: f.rem(48) f.rem(12);
 
     &_header {
       margin-bottom: f.rem(24);

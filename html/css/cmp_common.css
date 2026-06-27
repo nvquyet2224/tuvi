@@ -13,11 +13,8 @@
   font-size: 0.875rem;
 }
 .breadcrumb ul li a,
-.breadcrumb ul li span.sep {
-  color: #B4B4B4;
-}
-.breadcrumb ul li span.current {
-  color: #242420;
+.breadcrumb ul li span {
+  color: #000;
 }
 
 @media screen and (max-width: 1023px) {
@@ -207,7 +204,13 @@ input[type=number] {
 }
 .category-txt h3 {
   font-size: 2rem;
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
+}
+.category-brief {
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.4;
 }
 
 .article-banner {
@@ -789,6 +792,9 @@ input[type=number] {
   .category-txt h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+  .category-brief {
+    font-size: 1rem;
   }
   .article-banner--img {
     aspect-ratio: 242/257;

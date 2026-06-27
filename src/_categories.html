@@ -7,7 +7,7 @@
         </svg>134 sản phẩm</div>
       <div class="action">
         <button type="button" class="link-but stroke-black">Sale</button>
-        <button type="button" class="link-but stroke-black">Promotion</button>
+        <button type="button" class="link-but stroke-black current">Promotion</button>
         <div class="sort">
           <div class="sort_caption pc">Sort by:</div>
           <div class="select">
@@ -37,12 +37,366 @@
 
     </div>
 
+    <div class="categories_content-filter">
+        <div class="filter">
+          <div class="filter__head">
+            <div class="head-top">
+              <div class="head-top--right hide" id="filterDelete">Xóa bộ lọc</div>
+            </div>
+            <div class="head-tags" id="filterTag"></div>
+          </div>
+          <div class="filter__overlay" id="filterOverlay"></div>
+          <div class="filter__accordion" id="filter__accordion">
+            <div class="accordion__head">
+              Bộ lọc
+              <div class="accordion__head-btn close-filter" id="btn-close-filter">
+                <svg>
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="accordion__body">
+              <div class="list_accordion">
+                <div class="accordion__header">
+                  <span class="accordion__title">Kích thước</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content" style="height: 0px;">
+                  <div class="accordion__detail">
+                    <div class="check__list">
+                      <label class="check__item" for="1m">
+                        <input id="1m" type="checkbox" value="1m" name="size" />
+
+                        <span>1m</span>
+                      </label>
+                      <label class="check__item" for="1m2">
+                        <input id="1m2" type="checkbox" value="1m2" name="size" />
+
+                        <span>1m2</span>
+                      </label>
+                      <label class="check__item" for="1m4">
+                        <input id="1m4" type="checkbox" value="1m4" name="size" />
+
+                        <span>1m4</span>
+                      </label>
+                      <label class="check__item" for="1m6">
+                        <input id="1m6" type="checkbox" value="1m6" name="size" />
+
+                        <span>1m6</span>
+                      </label>
+                      <label class="check__item" for="3-flor">
+                        <input id="3-flor" type="checkbox" value="3-flor" name="size" />
+
+                        <span>3 Tầng</span>
+                      </label>
+                      <label class="check__item" for="300x500">
+                        <input id="300x500" type="checkbox" value="300x500" name="size" />
+
+                        <span>300 x 500 Mm</span>
+                      </label>
+                      <label class="check__item" for="300x600">
+                        <input id="300x600" type="checkbox" value="300x600" name="size" />
+
+                        <span>300 x 600 Mm</span>
+                      </label>
+                      <label class="check__item" for="300x700">
+                        <input id="300x700" type="checkbox" value="300x700" name="size" />
+
+                        <span>300 x 700 Mm</span>
+                      </label>
+                      <label class="check__item" for="300x800">
+                        <input id="300x800" type="checkbox" value="300x800" name="size" />
+
+                        <span>300 x 800 Mm</span>
+                      </label>
+                      <label class="check__item" for="300x900">
+                        <input id="300x900" type="checkbox" value="300x900" name="size" />
+
+                        <span>300 x 900 Mm</span>
+                      </label>
+                      <label class="check__item" for="4-flor">
+                        <input id="4-flor" type="checkbox" value="4-flor" name="size" />
+
+                        <span>4 Tầng</span>
+                      </label>
+                      <label class="check__item" for="5-flor">
+                        <input id="5-flor" type="checkbox" value="5-flor" name="size" />
+
+                        <span>5 Tầng</span>
+                      </label>
+                      <label class="check__item" for="500x800">
+                        <input id="500x800" type="checkbox" value="500x800" name="size" />
+
+                        <span>800 x 900 Mm</span>
+                      </label>
+                      <label class="check__item" for="7-inch">
+                        <input id="7-inch" type="checkbox" value="7-inch" name="size" />
+
+                        <span>7 Tấc</span>
+                      </label>
+                      <label class="check__item" for="8-inch">
+                        <input id="8-inch" type="checkbox" value="8-inch" name="size" />
+
+                        <span>8 Tấc</span>
+                      </label>
+                      <label class="check__item" for="9-inch">
+                        <input id="9-inch" type="checkbox" value="9-inch" name="size" />
+
+                        <span>9 Tấc</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list_accordion">
+                <div class="accordion__header">
+                  <span class="accordion__title">Chất liệu</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content" style="height: 0px;">
+                  <div class="accordion__detail">
+                    <div class="check__list">
+                      <label class="check__item active" for="inox-201">
+                        <input id="inox-201" type="checkbox" value="inox-201" name="material" />
+
+                        <span>Inox 201</span>
+                      </label>
+                      <label class="check__item" for="inox-304">
+                        <input id="inox-304" type="checkbox" value="inox-304" name="material" />
+
+                        <span>Inox 304</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list_accordion">
+                <div class="accordion__header">
+                  <span class="accordion__title">Màu sắc</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content" style="height: 0px;">
+                  <div class="accordion__detail">
+                    <div class="check__list">
+                      <label class="check__item" for="red">
+                        <input id="red" type="checkbox" value="red" name="color" />
+                        <span class="color" style="background-color: red"></span>
+                        <span>Đỏ</span>
+                      </label>
+                      <label class="check__item" for="black">
+                        <input id="black" type="checkbox" value="black" name="color" />
+                        <span class="color" style="background-color: black"></span>
+                        <span>Đen</span>
+                      </label>
+                      <label class="check__item" for="gray">
+                        <input id="gray" type="checkbox" value="gray" name="color" />
+                        <span class="color" style="background-color: gray"></span>
+                        <span>Xám</span>
+                      </label>
+                      <label class="check__item" for="blue">
+                        <input id="blue" type="checkbox" value="blue" name="color" />
+                        <span class="color" style="background-color: blue"></span>
+                        <span>Xanh</span>
+                      </label>
+                      <label class="check__item" for="pink">
+                        <input id="pink" type="checkbox" value="pink" name="color" />
+                        <span class="color" style="background-color: pink"></span>
+                        <span>Hồng</span>
+                      </label>
+                      <label class="check__item" for="coffee-milk">
+                        <input id="coffee-milk" type="checkbox" value="coffee-milk" name="color" />
+                        <span class="color" style="background-color: #979797"></span>
+                        <span>Caphe Sữa</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list_accordion">
+                <div class="accordion__header">
+                  <span class="accordion__title">Hoa văn</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content" style="height: 0px;">
+                  <div class="accordion__detail">
+                    <div class="check__list">
+                      <label class="check__item" for="pattern-01">
+                        <input id="pattern-01" type="checkbox" value="pattern-01" name="pattern" />
+
+                        <span>Hoa văn 1</span>
+                      </label>
+                      <label class="check__item" for="pattern-02">
+                        <input id="pattern-02" type="checkbox" value="pattern-02" name="pattern" />
+                        <span>Hoa văn 2</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list_accordion">
+                <div class="accordion__header">
+                  <span class="accordion__title">Giá</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content range-slider" style="height: 0px;">
+                  <div class="accordion__detail">
+                    <div id="slider-range"></div>
+                    <div class="inputs">
+                      <label for="number-left" class="inputs-item">
+                        Từ
+                        <input id="number-left" type="text" min="0" max="30000000" value="0" />
+                      </label>
+                      <label for="number-right" class="inputs-item">
+                        Đến
+                        <input id="number-right" type="text" min="0" max="100000000" value="30000000" />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list_accordion">
+                <div class="accordion__header">
+                  <span class="accordion__title">Không gian</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content" style="height: 0px;">
+                  <div class="accordion__detail">
+                    <div class="check__list">
+                      <label class="check__item" for="space-01">
+                        <input id="space-01" type="checkbox" value="space-01" name="space" />
+                        <span>Không gian 1</span>
+                      </label>
+                      <label class="check__item" for="space-02">
+                        <input id="space-02" type="checkbox" value="space-02" name="space" />
+
+                        <span>Không gian 2</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list_accordion">
+                <div class="accordion__header">
+                  <span class="accordion__title">Tính năng sản phẩm</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content" style="height: 0px;">
+                  <div class="accordion__detail">
+                    <div class="check__list">
+                      <label class="check__item" for="function-01">
+                        <input id="function-01" type="checkbox" value="function-01" name="function" />
+
+                        <span>Tính năng 1</span>
+                      </label>
+                      <label class="check__item" for="function-02">
+                        <input id="function-02" type="checkbox" value="function-02" name="function" />
+
+                        <span>Tính năng 2</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="accordion__footer">
+              <button class="accordion__footer-btn btn-reset" id="filterReset">CLEAR ALL</button>
+              <button class="accordion__footer-btn" id="filterApply">Áp dụng</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     <div class="categories_content">
       
       <div class="categories_content-products">
+
+        <div class="section section-countdown">
+          <div class="container">
+              <div class="countdown-card" style="background-image: url('images/count-down.jpg');">
+                  <div class="countdown-content">
+                      <h2 class="countdown-title">SUPER SAVING TIME</h2>
+                      <p class="countdown-desc">
+                          As a member, you get first pick on discounted styles from past collections. This helps us manage our inventory more responsibly. Ends June 30.
+                      </p>
+                      <div class="countdown" data-end-date="2026-06-30T23:59:59">
+                          <div class="countdown-item">
+                              <span class="value" id="days">12</span>
+                              <span class="unit">day</span>
+                          </div>
+                          <span class="countdown-separator">:</span>
+                          <div class="countdown-item">
+                              <span class="value" id="hours">23</span>
+                              <span class="unit">hours</span>
+                          </div>
+                          <span class="countdown-separator">:</span>
+                          <div class="countdown-item">
+                              <span class="value" id="minutes">33</span>
+                              <span class="unit">minute</span>
+                          </div>
+                          <span class="countdown-separator">:</span>
+                          <div class="countdown-item">
+                              <span class="value" id="seconds">00</span>
+                              <span class="unit">second</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        
         <div class="products-list" id="filterResult">
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-01.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -59,7 +413,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-02.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -76,7 +430,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-03.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -93,7 +447,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-04.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -110,7 +464,7 @@
             </div>
           </div>
           <div class="category-item to-left">
-            <div class="category-img">
+            <div class="category-img zoom-img">
               <img src="images/home-collection-main.jpg" alt="Collection Summer 2026" />
             </div>
             <div class="category-txt">
@@ -124,7 +478,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-01.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -141,7 +495,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-02.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -158,7 +512,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-03.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -175,7 +529,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-04.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -192,7 +546,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-01.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -209,7 +563,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-02.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -226,7 +580,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-03.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -243,7 +597,7 @@
             </div>
           </div>
           <div class="product">
-            <a href="product-detail.html" class="product-img">
+            <a href="product-detail.html" class="product-img zoom-img">
               <img width="225" height="222" loading="lazy" fetchpriority="low" src="images/home-collection-04.jpg"
                 alt="Men's Finn Slip-On Open Toe Casual Sandals" />
             </a>
@@ -260,12 +614,14 @@
             </div>
           </div>
         </div>
+
         <div class="empty-block hide" id="filterEmpty">
           <svg>
             <use xlink:href="#icon-not-found"></use>
           </svg>
           <p>Không tìm thấy sản phẩm</p>
         </div>
+
       </div>
     </div>
 

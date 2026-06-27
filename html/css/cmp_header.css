@@ -979,20 +979,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   top: 0rem;
 }
-.header.sticky .header-mid svg {
-  filter: invert(0);
-}
-.header.sticky .nav-menu > li > a,
-.header.sticky .nav-menu > li > span,
-.header.sticky .header-action .user-caption {
-  color: #000;
-}
-.header.sticky .header-action .search {
-  border-color: #000;
-}
-.header.sticky .header-action .search .search-input {
-  color: #000;
-}
 .header.open-menu .side {
   opacity: 1;
   -webkit-transform: translateX(0);

@@ -28,9 +28,10 @@
     <link href="css/cmp_common.css" rel="preload stylesheet" as="style">
     <link href="css/cmp_banner.css" rel="preload stylesheet" as="style">
     <link href="css/cmp_swiper.css" rel="preload stylesheet" as="style">
-    <link href="css/cmp_jquery_ui.css" rel="preload stylesheet" as="style">
     <link href="css/cmp_categories.css" rel="preload stylesheet" as="style">
     <link href="css/cmp_sub_banner.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_countdown.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_jquery_ui.css" rel="preload stylesheet" as="style" />
     <link href="css/cmp_footer.css" rel="preload stylesheet" as="style">
 </head>
 
@@ -39,8 +40,8 @@
         <%= htmlWebpackPlugin.options.svg %>
         <%= htmlWebpackPlugin.options.header %>
         <div class="main">
-            <% htmlWebpackPlugin.options.sub_banner %>
-            <% htmlWebpackPlugin.options.categories %>
+            <%= htmlWebpackPlugin.options.sub_banner %>
+            <%= htmlWebpackPlugin.options.categories %>
         </div>
         <%= htmlWebpackPlugin.options.footer %>
     </div>
@@ -50,6 +51,7 @@
     <script defer src="js/swiper-bundle.js"></script>
     <script defer src="js/index_main.js"></script>
     <script defer src="js/cmp_categories.js"></script>
+    <script defer src="none/cmp_countdown.js"></script>
     <%= htmlWebpackPlugin.options.preload %>
 </body>
 

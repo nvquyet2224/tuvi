@@ -26,16 +26,29 @@ const home_look = fs.readFileSync(__dirname + "/src/_home-look.html");
 const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
 const product_detail = fs.readFileSync(__dirname + "/src/_product-detail.html");
 const categories = fs.readFileSync(__dirname + "/src/_categories.html");
+const categories_women = fs.readFileSync(__dirname + "/src/_categories-women.html");
+const categories_men = fs.readFileSync(__dirname + "/src/_categories-men.html");
+const categories_kids = fs.readFileSync(__dirname + "/src/_categories-kids.html");
+const categories_sale = fs.readFileSync(__dirname + "/src/_categories-sale.html");
+
 const blogs = fs.readFileSync(__dirname + "/src/_blogs.html");
 const block_detail = fs.readFileSync(__dirname + "/src/_block-detail.html");
 const related_blogs = fs.readFileSync(__dirname + "/src/_component-related-blogs.html");
+
 const sub_banner_html = fs.readFileSync(__dirname + "/src/_sub-banner.html", "utf8");
+const sub_banner_women_html = fs.readFileSync(__dirname + "/src/_sub-banner-women.html", "utf8");
+const sub_banner_men_html = fs.readFileSync(__dirname + "/src/_sub-banner-men.html", "utf8");
+const sub_banner_kids_html = fs.readFileSync(__dirname + "/src/_sub-banner-kids.html", "utf8");
+const sub_banner_sale_html = fs.readFileSync(__dirname + "/src/_sub-banner-sale.html", "utf8");
+const sub_banner_blogs_html = fs.readFileSync(__dirname + "/src/_sub-banner-blogs.html", "utf8");
+const sub_banner_block_detail_html = fs.readFileSync(__dirname + "/src/_sub-banner-block-detail.html", "utf8");
+
 const countdown = fs.readFileSync(__dirname + "/src/_component-countdown.html");
 
-const makeSubBanner = (title, img = "sub-banner") => {
+const makeSubBanner = (title, img = "sub-banner", subBannerTemplate = sub_banner_html) => {
   const hasSp = fs.existsSync(path.join(__dirname, "src", "images", `${img}-sp.jpg`));
   const spSrc = hasSp ? `images/${img}-sp.jpg` : `images/${img}.jpg`;
-  return sub_banner_html
+  return subBannerTemplate
     .replace(/\${spSrc}/g, spSrc)
     .replace(/\${img}/g, img)
     .replace(/\${title}/g, title);
@@ -217,8 +230,8 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      sub_banner: makeSubBanner("women"),
-      categories: categories,
+      sub_banner: makeSubBanner("women", "sub-women", sub_banner_women_html),
+      categories: categories_women,
       countdown: countdown,
       footer: footer,
       template: "src/women.html",
@@ -230,8 +243,9 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      sub_banner: makeSubBanner("men"),
-      categories: categories,
+      sub_banner: makeSubBanner("men", "sub-men", sub_banner_men_html),
+      categories: categories_men,
+      countdown: countdown,
       footer: footer,
       template: "src/men.html",
       minify: minify,
@@ -242,8 +256,9 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      sub_banner: makeSubBanner("kids"),
-      categories: categories,
+      sub_banner: makeSubBanner("kids", "sub-kid", sub_banner_kids_html),
+      categories: categories_kids,
+      countdown: countdown,
       footer: footer,
       template: "src/kids.html",
       minify: minify,
@@ -256,6 +271,7 @@ module.exports = {
       header: header,
       sub_banner: makeSubBanner("collection"),
       categories: categories,
+      countdown: countdown,
       footer: footer,
       template: "src/collection.html",
       minify: minify,
@@ -266,11 +282,24 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      sub_banner: makeSubBanner("sale"),
-      blogs: blogs,
+      sub_banner: makeSubBanner("sale", "sub-sale", sub_banner_sale_html),
+      categories: categories_sale,
       countdown: countdown,
       footer: footer,
       template: "src/sale.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "blogs.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      sub_banner: makeSubBanner("Blogs", "sub-blog", sub_banner_blogs_html),
+      blogs: blogs,
+      countdown: countdown,
+      footer: footer,
+      template: "src/blogs.html",
       minify: minify,
     }),
     new HtmlWebpackPlugin({
@@ -290,7 +319,7 @@ module.exports = {
       preload: preload,
       svg: svg,
       header: header,
-      sub_banner: makeSubBanner("Blog Detail"),
+      sub_banner: makeSubBanner("Blog Detail", "sub-blog-detail", sub_banner_block_detail_html),
       block_detail: block_detail,
       related_blogs: related_blogs,
       footer: footer,
