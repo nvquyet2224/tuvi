@@ -587,14 +587,24 @@ function closePopup(byThis) {
 }
 
 function initQuickViewPopup() {
-  document.addEventListener("click", (e) => {
+  const handleCartClick = (e) => {
     const cartBtn = e.target.closest(".product-img_cart-btn");
     if (cartBtn) {
       e.preventDefault();
       e.stopPropagation();
       openPopup("#quickViewPop");
     }
-  }, true);
+  };
+
+  // 1. Delegated listeners in capture phase (high priority)
+  document.addEventListener("click", handleCartClick, true);
+  document.addEventListener("touchend", handleCartClick, { capture: true, passive: false });
+
+  // 2. Direct listeners on buttons (target phase fallback)
+  document.querySelectorAll(".product-img_cart-btn").forEach((btn) => {
+    btn.addEventListener("click", handleCartClick);
+    btn.addEventListener("touchend", handleCartClick, { passive: false });
+  });
 
   const popup = document.querySelector("#quickViewPop");
   if (!popup) return;
