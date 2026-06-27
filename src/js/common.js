@@ -572,7 +572,7 @@ function openPopup(byThis) {
   }
   const curPop = document.querySelector(byThis);
   if (curPop) {
-    body.classList.add("noScroll");
+    body.classList.add("no-scroll");
     curPop.classList.add("open");
   }
 }
@@ -583,7 +583,7 @@ function closePopup(byThis) {
   if (oldPop) {
     oldPop.classList.remove("open");
   }
-  body.classList.remove("noScroll");
+  body.classList.remove("no-scroll");
 }
 
 function initQuickViewPopup() {

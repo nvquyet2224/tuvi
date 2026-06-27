@@ -17,11 +17,6 @@ input::-webkit-inner-spin-button {
   transition: 0.3s;
 }
 
-.zoom-img:hover img {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -115,6 +110,7 @@ input[type="number"] {
       transition: all 0.3s ease;
 
       svg {
+        pointer-events: none;
         width: f.rem(18);
         height: f.rem(18);
         color: #111111;
@@ -937,6 +933,11 @@ input[type="number"] {
 }
 
 @media screen and (min-width: 1025px) {
+  .zoom-img:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
   .paging {
     &-item {
       &:hover {
