@@ -399,31 +399,6 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, .1);
         top: f.rem(0);
 
-        // .header-top {
-        //     //background-color: var(--global-color);
-        // }
-
-        // .header-mid {
-        //     //background-color: #fff;
-
-        //     svg {
-        //         filter: invert(0);
-        //     }
-        // }
-
-        // .nav-menu>li>a,
-        // .nav-menu>li>span,
-        // .header-action .user-caption {
-        //     color: #000;
-        // }
-
-        // .header-action .search {
-        //     border-color: #000;
-
-        //     .search-input {
-        //         color: #000;
-        //     }
-        // }
     }
 
     &.open-menu {
@@ -472,7 +447,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
-    z-index: 10;
+    z-index: 998;
     pointer-events: none;
     opacity: 0;
     -webkit-transition: opacity .4s ease-in-out;
@@ -555,6 +530,8 @@
         svg {
             width: f.rem(14);
             height: f.rem(14);
+            flex: none;
+            max-width:initial;
         }
     }
 

@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   overflow-y: auto;
-  z-index: 30;
+  z-index: 1000;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -216,7 +216,7 @@
     top: 0;
     bottom: 0;
     max-height: 100%;
-    z-index: 30;
+    z-index: 1000;
   }
   .search_content {
     max-width: 100%;
@@ -364,7 +364,7 @@
 }
 .mini-cart-popup {
   position: fixed;
-  z-index: 31;
+  z-index: 1000;
   top: 0;
   left: 0;
   right: 0;
@@ -1018,7 +1018,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
-  z-index: 10;
+  z-index: 998;
   pointer-events: none;
   opacity: 0;
   -webkit-transition: opacity 0.4s ease-in-out;
@@ -1092,6 +1092,8 @@
 .side .close-menu svg {
   width: 0.875rem;
   height: 0.875rem;
+  flex: none;
+  max-width: initial;
 }
 .side-box {
   position: relative;

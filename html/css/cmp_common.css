@@ -264,7 +264,7 @@
 }
 .size-guide-header {
   padding: 1.5rem;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
 }
 .size-guide-title {
   font-size: 1.5rem;
@@ -279,7 +279,7 @@
 .size-guide-tab-header {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
 .size-guide-tab-header .tab-btn {
@@ -307,10 +307,11 @@
   width: 100%;
   border-collapse: collapse;
 }
-.size-guide-table th, .size-guide-table td {
+.size-guide-table th,
+.size-guide-table td {
   padding: 0.75rem 1rem;
   text-align: center;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
 }
 .size-guide-table th {
   font-size: 1rem;
@@ -439,17 +440,23 @@ body.no-scroll {
 
 @media (max-width: 767px) {
   .popup {
+    background-color: #ffffff;
+    backdrop-filter: none;
     align-items: flex-start;
     overflow-y: auto;
-    padding: 1.875rem 0;
+    padding: 0;
   }
   .popup-inr {
-    padding: 0.9375rem;
+    padding: 0;
     box-sizing: border-box;
+  }
+  .popup-content {
+    border-radius: 0;
+    box-shadow: none;
   }
   .quick-view-grid {
     flex-direction: column;
-    padding: 1.875rem;
+    padding: 0.75rem 0.75rem 1.5rem 0.75rem;
   }
   .quick-view-left {
     flex: 0 0 100%;
@@ -460,7 +467,14 @@ body.no-scroll {
     max-width: 100%;
   }
   .quick-view-right .quick-view-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+  .quick-view-right .quick-view-price .sale {
+    font-size: 1rem;
+  }
+  .quick-view-right .quick-view-price .old,
+  .quick-view-right .quick-view-price .badge {
+    font-size: 0.8125rem;
   }
   .quick-view-right {
     padding-left: 0;
@@ -479,13 +493,14 @@ body.no-scroll {
     padding: 1.25rem 1.25rem 1.875rem 1.25rem;
   }
   .size-guide-tab-header {
-    gap: 1rem;
+    gap: 1.5rem;
   }
   .size-guide-tab-header .tab-btn {
     font-size: 0.875rem;
     padding-bottom: 0.5rem;
   }
-  .size-guide-table th, .size-guide-table td {
+  .size-guide-table th,
+  .size-guide-table td {
     padding: 0.625rem 0.5rem;
     font-size: 0.8125rem;
   }

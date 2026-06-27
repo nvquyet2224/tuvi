@@ -451,7 +451,7 @@
 
 @media screen and (max-width: 1023px) {
   .mainproduct {
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 0 0;
   }
   .mainproduct .container {
     padding: 0;
@@ -462,6 +462,7 @@
   .mainproduct_wrap {
     flex-direction: column;
     gap: 1.5rem;
+    margin-bottom: 0;
   }
   .mainproduct .gallery {
     flex: 0 0 100%;
@@ -576,14 +577,17 @@
 
 @media screen and (max-width: 1023px) {
   .service {
-    padding: 3rem 0.9375rem;
+    padding: 3rem 0.75rem 0 0.75rem;
+  }
+  .service_wrap {
+    padding: 3.125rem 0;
   }
   .service-list {
     flex: 0 0 100%;
     max-width: 100%;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1.25rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0;
   }
   .service-list :nth-child(even) {
     border-right: none;

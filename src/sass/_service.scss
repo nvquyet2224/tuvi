@@ -86,14 +86,17 @@
 
 @media screen and (max-width: 1023px) {
   .service {
-    padding: f.rem(48) f.rem(15);
+    padding: f.rem(48) f.rem(12) 0 f.rem(12);
+    &_wrap {
+      padding: f.rem(50) 0;
+    }
 
     &-list {
       flex: 0 0 100%;
       max-width: 100%;
       grid-template-columns: repeat(2, 1fr);
       row-gap: f.rem(20);
-      margin-bottom: f.rem(20);
+      margin-bottom: 0;
 
       :nth-child(even) {
         border-right: none;
