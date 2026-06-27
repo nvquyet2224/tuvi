@@ -88,7 +88,7 @@
     margin-bottom: f.rem(20);
 
     &--img {
-      aspect-ratio: 375/240;
+      aspect-ratio: 375/375;
 
       img {
         width: 100%;
@@ -99,6 +99,7 @@
     }
 
     &--txt {
+      padding: 0 f.rem(12);
       .title_block {
         h1 {
           font-size: f.rem(32);

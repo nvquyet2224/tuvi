@@ -595,6 +595,12 @@
     grid-column: span 2 !important;
     grid-row: span 1 !important;
   }
+  .categories_content-products .products-list .category-item .category-img {
+    aspect-ratio: 480/960;
+  }
+  .categories_content-products .products-list .category-item .category-txt {
+    padding: 1.5rem 0.75rem;
+  }
 }
 @media screen and (max-width: 820px) {
   .categories_head {
@@ -604,7 +610,14 @@
   .categories_head .action {
     flex: 0 0 100%;
     max-width: 100%;
+    flex-wrap: wrap;
   }
+  .categories_head .sort {
+    flex: 1;
+  }
+}
+@media screen and (max-width: 520px) {
+  .categories_head .link-but,
   .categories_head .sort {
     flex: 1;
   }

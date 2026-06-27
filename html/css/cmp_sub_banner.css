@@ -65,13 +65,16 @@
     margin-bottom: 1.25rem;
   }
   .sub-banner--img {
-    aspect-ratio: 375/240;
+    aspect-ratio: 375/375;
   }
   .sub-banner--img img {
     width: 100%;
     height: 100%;
     -webkit-object-fit: cover;
     object-fit: cover;
+  }
+  .sub-banner--txt {
+    padding: 0 0.75rem;
   }
   .sub-banner--txt .title_block h1 {
     font-size: 2rem;

@@ -84,8 +84,8 @@
 @media screen and (max-width: 1023px) {
   .section-countdown {
     .countdown-card {
-      padding: f.rem(40) f.rem(24);
-      aspect-ratio: 375 / 260;
+      padding: f.rem(60) f.rem(20);
+      aspect-ratio: 375 / 375;
       background-position: center center;
     }
 
@@ -119,6 +119,14 @@
         font-size: f.rem(20);
         margin-bottom: f.rem(16);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-countdown {
+    .countdown-title {
+      font-size: f.rem(28);
     }
   }
 }

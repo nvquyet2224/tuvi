@@ -392,6 +392,9 @@ lottie-player {
     font-size: 0.875rem;
     padding: 0 2.5rem;
   }
+  .link-but {
+    font-size: 0.875rem;
+  }
 }
 @media screen and (max-width: 480px) {
   html {

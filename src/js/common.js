@@ -594,7 +594,7 @@ function initQuickViewPopup() {
       e.stopPropagation();
       openPopup("#quickViewPop");
     }
-  });
+  }, true);
 
   const popup = document.querySelector("#quickViewPop");
   if (!popup) return;
