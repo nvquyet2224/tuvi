@@ -14,7 +14,6 @@
     &_slide-inner {
         width: 100%;
         display: flex;
-        // gap: f.rem(138);
         align-items: center;
         justify-content: space-between;
     }
@@ -31,7 +30,6 @@
     }
 
     &_content-col {
-        // flex: 1;
         flex: 0 0 40.003436426%;
         max-width: 40.003436426%;
     }
@@ -77,7 +75,6 @@
     }
 }
 
-// Responsive Styles
 @media screen and (max-width: 1023px) {
     .home-why {
         padding: f.rem(70) 0;

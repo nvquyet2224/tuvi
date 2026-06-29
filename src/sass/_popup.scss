@@ -1,6 +1,5 @@
 @use "function" as f;
 
-// Desktop / Global Base Styles
 .popup {
   position: fixed;
   top: 0;
@@ -236,7 +235,6 @@
       }
     }
 
-    // Select input stylings specific to Quick View popup
     .select {
       .select-header {
         border: 1px solid #d0d5dd;
@@ -261,7 +259,6 @@
   }
 }
 
-// Size Guide Styles
 .size-guide {
   &-content {
     padding: 0;
@@ -476,7 +473,6 @@ body.no-scroll {
   height: 100vh;
 }
 
-// Mobile Responsive Styles (Max-width 767px)
 @media (max-width: 767px) {
   .popup {
     background-color: #ffffff;

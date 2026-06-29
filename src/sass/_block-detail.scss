@@ -10,7 +10,6 @@
     }
   }
 
-  // Main Title
   &_main-title {
     text-align: center;
     font-size: f.rem(48);
@@ -22,7 +21,6 @@
     line-height: 1.1;
   }
 
-  // Subtitle
   &_subtitle {
     text-align: center;
     font-size: f.rem(16);
@@ -32,7 +30,6 @@
     margin: 0 auto f.rem(40) auto;
   }
 
-  // Author & Share Row
   &_author-row {
     max-width: f.rem(1100);
     margin: 0 auto f.rem(48) auto;
@@ -116,7 +113,6 @@
     }
   }
 
-  // Grid Layout
   &_body {
     display: grid;
     grid-template-columns: f.rem(260) 1fr;
@@ -125,7 +121,6 @@
     margin: 0 auto;
   }
 
-  // Table of Contents
   &_toc-wrapper {
     position: relative;
   }
@@ -190,7 +185,6 @@
     }
   }
 
-  // Main Content
   &_main-content {
     font-size: f.rem(16);
     line-height: 1.7;
@@ -198,7 +192,7 @@
 
     .content-section {
       margin-bottom: f.rem(48);
-      scroll-margin-top: f.rem(120); // for smooth scroll spacing
+      scroll-margin-top: f.rem(120);
     }
 
     h2 {
@@ -246,7 +240,6 @@
   }
 }
 
-// Responsive
 @media screen and (max-width: 1023px) {
   .block-detail {
     padding: f.rem(40) 0 f.rem(60) 0;

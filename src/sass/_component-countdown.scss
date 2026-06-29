@@ -26,7 +26,7 @@
   }
 
   .countdown-title {
-    color: var(--global-color); // #C93640
+    color: var(--global-color);
     font-size: f.rem(64);
     font-weight: 700;
     line-height: 1.1;
@@ -52,10 +52,9 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      //min-width: f.rem(60);
 
       .value {
-        color: var(--global-color); // #C93640
+        color: var(--global-color);
         font-size: f.rem(38);
         font-weight: 700;
         line-height: 1;
@@ -75,12 +74,11 @@
       font-size: f.rem(20);
       font-weight: 500;
       line-height: 1;
-      margin-bottom: f.rem(20); // offset vertical alignment to match values
+      margin-bottom: f.rem(20);
     }
   }
 }
 
-// Media queries for responsiveness
 @media screen and (max-width: 1023px) {
   .section-countdown {
     .countdown-card {

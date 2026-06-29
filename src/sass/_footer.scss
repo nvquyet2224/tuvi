@@ -268,7 +268,6 @@
     }
 }
 
-// Responsive Styles
 @media screen and (max-width: 1023px) {
     .footer {
         padding: f.rem(70) f.rem(12);
@@ -372,7 +371,6 @@
     }
 }
 
-// Beautiful footer background shape floating animations
 @-webkit-keyframes floatFooterBlobOne {
     0% {
         -webkit-transform: translate(0, 0) rotate(0deg) scale(1);

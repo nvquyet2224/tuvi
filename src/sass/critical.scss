@@ -1,16 +1,15 @@
-//@use "reset";
 @use "function" as f;
-//@use "header";
-//@use "banner";
 
 :root {
   --global-color: #c93640;
   --global-colorA: 201, 54, 64;
   --global-color-dark: #07274a;
   --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
-  --g-blue: linear-gradient(180deg,
-      rgba(10, 124, 220, 0) 23.17%,
-      rgba(5, 92, 165, 0.95) 88.61%);
+  --g-blue: linear-gradient(
+    180deg,
+    rgba(10, 124, 220, 0) 23.17%,
+    rgba(5, 92, 165, 0.95) 88.61%
+  );
 }
 
 body {
@@ -72,8 +71,23 @@ button {
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+h1,
 .h1 {
-  font-weight: 900;
+  font-weight: 800;
   font-size: f.rem(150);
   line-height: 1.035714286;
 }
@@ -195,13 +209,11 @@ lottie-player {
   align-items: center;
   gap: f.rem(8);
   height: f.rem(56);
-  //border: 1px solid var(--global-color);
-  //box-shadow: 0px 1px 2px 0px #1018280d;
   text-decoration: none;
   padding: 0 f.rem(32);
   -webkit-border-radius: f.rem(60);
   border-radius: f.rem(60);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Afacad", sans-serif;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 
@@ -285,7 +297,6 @@ lottie-player {
     input {
       width: 100%;
       height: f.rem(48);
-      // background: #fff url(../images/search-icon.svg) no-repeat f.rem(16) center;
       background-size: f.rem(17) auto;
       max-width: f.rem(446);
       font-size: f.rem(16);
@@ -300,7 +311,6 @@ lottie-player {
     }
   }
 }
-
 
 .select {
   position: relative;
@@ -395,7 +405,8 @@ lottie-player {
   }
 }
 
-@supports (-webkit-text-stroke: #fcd535) {}
+@supports (-webkit-text-stroke: #fcd535) {
+}
 
 @media screen and (min-width: 1025px) {
   .select {
@@ -424,7 +435,6 @@ lottie-player {
 }
 
 @media screen and (max-width: 1023px) {
-
   h1,
   .h1 {
     font-size: f.rem(64);
@@ -461,30 +471,29 @@ lottie-player {
     font-size: f.rem(14);
   }
 
-  // .sub-banner {
-  //   margin-bottom: f.rem(20);
+  .sub-banner {
+    margin-bottom: f.rem(20);
 
-  //   &--img {
-  //     aspect-ratio: 375/180;
+    &--img {
+      aspect-ratio: 375/180;
 
-  //     img {
-  //       width: 100%;
-  //       height: 100%;
-  //       -webkit-object-fit: cover;
-  //       object-fit: cover;
-  //     }
-  //   }
+      img {
+        width: 100%;
+        height: 100%;
+        -webkit-object-fit: cover;
+        object-fit: cover;
+      }
+    }
 
-  //   &--txt {
-  //     .title_block {
-
-  //       .sub-title,
-  //       h1 {
-  //         font-size: f.rem(24);
-  //       }
-  //     }
-  //   }
-  // }
+    &--txt {
+      .title_block {
+        .sub-title,
+        h1 {
+          font-size: f.rem(24);
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {

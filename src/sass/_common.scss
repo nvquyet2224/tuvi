@@ -28,7 +28,7 @@ input[type="number"] {
   border: 1px solid #d0d5dd;
   -webkit-border-radius: f.rem(4);
   border-radius: f.rem(4);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Afacad", sans-serif;
   font-weight: 400;
 }
 
@@ -49,10 +49,6 @@ input[type="number"] {
 
 .input-txt--upload {
   line-height: f.rem(48);
-  // background: url(../images/icon-link.svg) no-repeat calc(100% - f.rem(16))
-  //   center;
-  background-size: f.rem(16) auto;
-
   &::-webkit-file-upload-button {
     display: none;
   }
@@ -69,15 +65,9 @@ input[type="number"] {
   &-img {
     position: relative;
     line-height: 0;
-    //width: f.rem(335);
-    //height: f.rem(326);
     display: block;
     aspect-ratio: 335/326;
     line-height: 0;
-    //display: flex;
-    //align-items: center;
-    //justify-content: center;
-    //margin: 0 auto;
     margin-bottom: f.rem(16);
 
     img {
@@ -85,10 +75,6 @@ input[type="number"] {
       height: 100%;
       -webkit-object-fit: cover;
       object-fit: cover;
-      // width: auto;
-      // height: auto;
-      // max-width: 100%;
-      // max-height: 100%;
       -webkit-transition: transform 0.3s ease-in-out;
       transition: transform 0.3s ease-in-out;
     }
@@ -409,7 +395,7 @@ input[type="number"] {
       font-size: f.rem(16);
       line-height: 1.5;
       margin-top: f.rem(20);
-      font-family: "Montserrat", sans-serif;
+      font-family: "Afacad", sans-serif;
 
       svg {
         width: f.rem(13);
@@ -497,14 +483,6 @@ input[type="number"] {
   padding: f.rem(30);
 
   &-img {
-    // display: flex;
-    // width: f.rem(100);
-    // height: f.rem(100);
-    // line-height: 0;
-    // margin: 0 auto;
-    // margin-bottom: f.rem(20);
-    // align-items: center;
-    // justify-content: center;
     aspect-ratio: 174/160;
     line-height: 0;
     overflow: hidden;
@@ -514,12 +492,6 @@ input[type="number"] {
       height: 100%;
       -webkit-object-fit: cover;
       object-fit: cover;
-      // width: auto;
-      // height: auto;
-      // max-width: 100%;
-      // max-height: 100%;
-      // -webkit-transition: transform 0.3s ease-in-out;
-      // transition: transform 0.3s ease-in-out;
     }
   }
 
@@ -897,38 +869,6 @@ input[type="number"] {
     perspective: 1px;
   }
 }
-
-// @media (hover: hover) and (pointer: fine) {
-//   .product {
-//     img {
-//       transition: all 0.2s ease;
-//     }
-//     &-img {
-//       &:hover {
-//         img {
-//           transform: scale(1.1);
-//         }
-//       }
-//     }
-//   }
-//   .new {
-//     &-img {
-//       overflow: hidden;
-//       img {
-//         transition: all 0.2s ease;
-//       }
-//     }
-
-//     &-img {
-//       &:hover {
-//         img {
-//           transform: scale(1.1);
-//         }
-//       }
-//     }
-//   }
-// }
-
 @supports (-webkit-text-stroke: #fcd535) {
 }
 

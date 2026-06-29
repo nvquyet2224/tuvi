@@ -438,15 +438,12 @@
 
     .filter {
         &__head {
-            //padding: 0 f.rem(16);
-            //margin-bottom: f.rem(0);
             padding: f.rem(16);
             border-bottom: 1px solid #D9D9D9;
 
             .head {
                 &-top {
                     &--left {
-                        //gap: f.rem(8);
                         font-size: f.rem(14);
                         cursor: pointer;
 

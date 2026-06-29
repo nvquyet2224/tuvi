@@ -92,7 +92,6 @@
             grid-column: span 2;
             grid-row: span 2;
 
-            // Default alignment is left-aligned, but client can override manually
             &.to-left {
               grid-column: 1 / 3;
             }
@@ -110,7 +109,6 @@
             }
           }
 
-          // Legacy container-level override (optional support)
           &.banner-right {
             .category-item {
               grid-column: 3 / 5;
