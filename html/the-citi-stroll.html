@@ -1434,7 +1434,7 @@
           <div class="filter__overlay" id="filterOverlay"></div>
           <div class="filter__accordion" id="filter__accordion">
             <div class="accordion__head">
-              Bộ lọc
+              Filter
               <div class="accordion__head-btn close-filter" id="btn-close-filter">
                 <svg>
                   <use xlink:href="#icon-close"></use>
@@ -1443,8 +1443,8 @@
             </div>
             <div class="accordion__body">
               <div class="list_accordion">
-                <div class="accordion__header">
-                  <span class="accordion__title">Kích thước</span>
+                <div class="accordion__header current">
+                  <span class="accordion__title">Gender</span>
                   <span class="accordion__icon">
                     <svg class="plus">
                       <use xlink:href="#icon-increase"></use>
@@ -1454,96 +1454,28 @@
                     </svg>
                   </span>
                 </div>
-                <div class="accordion__content" style="height: 0px;">
+                <div class="accordion__content">
                   <div class="accordion__detail">
                     <div class="check__list">
-                      <label class="check__item" for="1m">
-                        <input id="1m" type="checkbox" value="1m" name="size" />
-
-                        <span>1m</span>
+                      <label class="check__item" for="gender-men">
+                        <input id="gender-men" type="checkbox" value="men" name="gender" checked />
+                        <span>Men</span>
                       </label>
-                      <label class="check__item" for="1m2">
-                        <input id="1m2" type="checkbox" value="1m2" name="size" />
-
-                        <span>1m2</span>
+                      <label class="check__item" for="gender-woman">
+                        <input id="gender-woman" type="checkbox" value="woman" name="gender" />
+                        <span>Woman</span>
                       </label>
-                      <label class="check__item" for="1m4">
-                        <input id="1m4" type="checkbox" value="1m4" name="size" />
-
-                        <span>1m4</span>
-                      </label>
-                      <label class="check__item" for="1m6">
-                        <input id="1m6" type="checkbox" value="1m6" name="size" />
-
-                        <span>1m6</span>
-                      </label>
-                      <label class="check__item" for="3-flor">
-                        <input id="3-flor" type="checkbox" value="3-flor" name="size" />
-
-                        <span>3 Tầng</span>
-                      </label>
-                      <label class="check__item" for="300x500">
-                        <input id="300x500" type="checkbox" value="300x500" name="size" />
-
-                        <span>300 x 500 Mm</span>
-                      </label>
-                      <label class="check__item" for="300x600">
-                        <input id="300x600" type="checkbox" value="300x600" name="size" />
-
-                        <span>300 x 600 Mm</span>
-                      </label>
-                      <label class="check__item" for="300x700">
-                        <input id="300x700" type="checkbox" value="300x700" name="size" />
-
-                        <span>300 x 700 Mm</span>
-                      </label>
-                      <label class="check__item" for="300x800">
-                        <input id="300x800" type="checkbox" value="300x800" name="size" />
-
-                        <span>300 x 800 Mm</span>
-                      </label>
-                      <label class="check__item" for="300x900">
-                        <input id="300x900" type="checkbox" value="300x900" name="size" />
-
-                        <span>300 x 900 Mm</span>
-                      </label>
-                      <label class="check__item" for="4-flor">
-                        <input id="4-flor" type="checkbox" value="4-flor" name="size" />
-
-                        <span>4 Tầng</span>
-                      </label>
-                      <label class="check__item" for="5-flor">
-                        <input id="5-flor" type="checkbox" value="5-flor" name="size" />
-
-                        <span>5 Tầng</span>
-                      </label>
-                      <label class="check__item" for="500x800">
-                        <input id="500x800" type="checkbox" value="500x800" name="size" />
-
-                        <span>800 x 900 Mm</span>
-                      </label>
-                      <label class="check__item" for="7-inch">
-                        <input id="7-inch" type="checkbox" value="7-inch" name="size" />
-
-                        <span>7 Tấc</span>
-                      </label>
-                      <label class="check__item" for="8-inch">
-                        <input id="8-inch" type="checkbox" value="8-inch" name="size" />
-
-                        <span>8 Tấc</span>
-                      </label>
-                      <label class="check__item" for="9-inch">
-                        <input id="9-inch" type="checkbox" value="9-inch" name="size" />
-
-                        <span>9 Tấc</span>
+                      <label class="check__item" for="gender-kids">
+                        <input id="gender-kids" type="checkbox" value="kids" name="gender" />
+                        <span>Kids</span>
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="list_accordion">
-                <div class="accordion__header">
-                  <span class="accordion__title">Chất liệu</span>
+                <div class="accordion__header current">
+                  <span class="accordion__title">Classification</span>
                   <span class="accordion__icon">
                     <svg class="plus">
                       <use xlink:href="#icon-increase"></use>
@@ -1553,26 +1485,36 @@
                     </svg>
                   </span>
                 </div>
-                <div class="accordion__content" style="height: 0px;">
+                <div class="accordion__content">
                   <div class="accordion__detail">
                     <div class="check__list">
-                      <label class="check__item active" for="inox-201">
-                        <input id="inox-201" type="checkbox" value="inox-201" name="material" />
-
-                        <span>Inox 201</span>
+                      <label class="check__item" for="class-waterproof">
+                        <input id="class-waterproof" type="checkbox" value="waterproof" name="classification" checked />
+                        <span>Waterproof</span>
                       </label>
-                      <label class="check__item" for="inox-304">
-                        <input id="inox-304" type="checkbox" value="inox-304" name="material" />
-
-                        <span>Inox 304</span>
+                      <label class="check__item" for="class-anti-slip">
+                        <input id="class-anti-slip" type="checkbox" value="anti-slip" name="classification" />
+                        <span>Anti-slip</span>
+                      </label>
+                      <label class="check__item" for="class-durability">
+                        <input id="class-durability" type="checkbox" value="durability" name="classification" />
+                        <span>High-durability</span>
+                      </label>
+                      <label class="check__item" for="class-walking">
+                        <input id="class-walking" type="checkbox" value="walking" name="classification" />
+                        <span>Comfortable walking</span>
+                      </label>
+                      <label class="check__item" for="class-recyclable">
+                        <input id="class-recyclable" type="checkbox" value="recyclable" name="classification" />
+                        <span>Recyclable</span>
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="list_accordion">
-                <div class="accordion__header">
-                  <span class="accordion__title">Màu sắc</span>
+                <div class="accordion__header current">
+                  <span class="accordion__title">Performance</span>
                   <span class="accordion__icon">
                     <svg class="plus">
                       <use xlink:href="#icon-increase"></use>
@@ -1582,7 +1524,42 @@
                     </svg>
                   </span>
                 </div>
-                <div class="accordion__content" style="height: 0px;">
+                <div class="accordion__content">
+                  <div class="accordion__detail">
+                    <div class="check__list">
+                      <label class="check__item" for="perf-rain">
+                        <input id="perf-rain" type="checkbox" value="rain" name="performance" checked />
+                        <span>Rainy day activities</span>
+                      </label>
+                      <label class="check__item" for="perf-gardening">
+                        <input id="perf-gardening" type="checkbox" value="gardening" name="performance" />
+                        <span>Gardening</span>
+                      </label>
+                      <label class="check__item" for="perf-urban">
+                        <input id="perf-urban" type="checkbox" value="urban" name="performance" />
+                        <span>Urban activities</span>
+                      </label>
+                      <label class="check__item" for="perf-outdoor">
+                        <input id="perf-outdoor" type="checkbox" value="outdoor" name="performance" />
+                        <span>Nature/Outdoor activities</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list_accordion">
+                <div class="accordion__header current">
+                  <span class="accordion__title">Colour</span>
+                  <span class="accordion__icon">
+                    <svg class="plus">
+                      <use xlink:href="#icon-increase"></use>
+                    </svg>
+                    <svg class="minus">
+                      <use xlink:href="#icon-decrease"></use>
+                    </svg>
+                  </span>
+                </div>
+                <div class="accordion__content">
                   <div class="accordion__detail">
                     <div class="check__list">
                       <label class="check__item" for="red">
@@ -1593,7 +1570,7 @@
                       <label class="check__item" for="black">
                         <input id="black" type="checkbox" value="black" name="color" />
                         <span class="color" style="background-color: black"></span>
-                        <span>Đen</span>
+                        <span>Black</span>
                       </label>
                       <label class="check__item" for="gray">
                         <input id="gray" type="checkbox" value="gray" name="color" />
@@ -1612,7 +1589,7 @@
                       </label>
                       <label class="check__item" for="coffee-milk">
                         <input id="coffee-milk" type="checkbox" value="coffee-milk" name="color" />
-                        <span class="color" style="background-color: #979797"></span>
+                        <span class="color" style="background-color: #c5a080"></span>
                         <span>Caphe Sữa</span>
                       </label>
                     </div>
@@ -1621,7 +1598,7 @@
               </div>
               <div class="list_accordion">
                 <div class="accordion__header">
-                  <span class="accordion__title">Hoa văn</span>
+                  <span class="accordion__title">Size</span>
                   <span class="accordion__icon">
                     <svg class="plus">
                       <use xlink:href="#icon-increase"></use>
@@ -1631,25 +1608,56 @@
                     </svg>
                   </span>
                 </div>
-                <div class="accordion__content" style="height: 0px;">
+                <div class="accordion__content">
                   <div class="accordion__detail">
                     <div class="check__list">
-                      <label class="check__item" for="pattern-01">
-                        <input id="pattern-01" type="checkbox" value="pattern-01" name="pattern" />
-
-                        <span>Hoa văn 1</span>
+                      <label class="check__item" for="size-35">
+                        <input id="size-35" type="checkbox" value="35" name="size" />
+                        <span>35</span>
                       </label>
-                      <label class="check__item" for="pattern-02">
-                        <input id="pattern-02" type="checkbox" value="pattern-02" name="pattern" />
-                        <span>Hoa văn 2</span>
+                      <label class="check__item" for="size-36">
+                        <input id="size-36" type="checkbox" value="36" name="size" />
+                        <span>36</span>
+                      </label>
+                      <label class="check__item" for="size-37">
+                        <input id="size-37" type="checkbox" value="37" name="size" />
+                        <span>37</span>
+                      </label>
+                      <label class="check__item" for="size-38">
+                        <input id="size-38" type="checkbox" value="38" name="size" />
+                        <span>38</span>
+                      </label>
+                      <label class="check__item" for="size-39">
+                        <input id="size-39" type="checkbox" value="39" name="size" />
+                        <span>39</span>
+                      </label>
+                      <label class="check__item" for="size-40">
+                        <input id="size-40" type="checkbox" value="40" name="size" />
+                        <span>40</span>
+                      </label>
+                      <label class="check__item" for="size-41">
+                        <input id="size-41" type="checkbox" value="41" name="size" />
+                        <span>41</span>
+                      </label>
+                      <label class="check__item" for="size-42">
+                        <input id="size-42" type="checkbox" value="42" name="size" />
+                        <span>42</span>
+                      </label>
+                      <label class="check__item" for="size-43">
+                        <input id="size-43" type="checkbox" value="43" name="size" />
+                        <span>43</span>
+                      </label>
+                      <label class="check__item" for="size-44">
+                        <input id="size-44" type="checkbox" value="44" name="size" />
+                        <span>44</span>
                       </label>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="list_accordion">
-                <div class="accordion__header">
-                  <span class="accordion__title">Giá</span>
+                <div class="accordion__header current">
+                  <span class="accordion__title">Price</span>
                   <span class="accordion__icon">
                     <svg class="plus">
                       <use xlink:href="#icon-increase"></use>
@@ -1659,7 +1667,7 @@
                     </svg>
                   </span>
                 </div>
-                <div class="accordion__content range-slider" style="height: 0px;">
+                <div class="accordion__content range-slider">
                   <div class="accordion__detail">
                     <div id="slider-range"></div>
                     <div class="inputs">
@@ -1675,72 +1683,15 @@
                   </div>
                 </div>
               </div>
-              <div class="list_accordion">
-                <div class="accordion__header">
-                  <span class="accordion__title">Không gian</span>
-                  <span class="accordion__icon">
-                    <svg class="plus">
-                      <use xlink:href="#icon-increase"></use>
-                    </svg>
-                    <svg class="minus">
-                      <use xlink:href="#icon-decrease"></use>
-                    </svg>
-                  </span>
-                </div>
-                <div class="accordion__content" style="height: 0px;">
-                  <div class="accordion__detail">
-                    <div class="check__list">
-                      <label class="check__item" for="space-01">
-                        <input id="space-01" type="checkbox" value="space-01" name="space" />
-                        <span>Không gian 1</span>
-                      </label>
-                      <label class="check__item" for="space-02">
-                        <input id="space-02" type="checkbox" value="space-02" name="space" />
-
-                        <span>Không gian 2</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="list_accordion">
-                <div class="accordion__header">
-                  <span class="accordion__title">Tính năng sản phẩm</span>
-                  <span class="accordion__icon">
-                    <svg class="plus">
-                      <use xlink:href="#icon-increase"></use>
-                    </svg>
-                    <svg class="minus">
-                      <use xlink:href="#icon-decrease"></use>
-                    </svg>
-                  </span>
-                </div>
-                <div class="accordion__content" style="height: 0px;">
-                  <div class="accordion__detail">
-                    <div class="check__list">
-                      <label class="check__item" for="function-01">
-                        <input id="function-01" type="checkbox" value="function-01" name="function" />
-
-                        <span>Tính năng 1</span>
-                      </label>
-                      <label class="check__item" for="function-02">
-                        <input id="function-02" type="checkbox" value="function-02" name="function" />
-
-                        <span>Tính năng 2</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
             </div>
             <div class="accordion__footer">
               <button class="accordion__footer-btn btn-reset" id="filterReset">CLEAR ALL</button>
-              <button class="accordion__footer-btn" id="filterApply">Áp dụng</button>
+              <button class="accordion__footer-btn" id="filterApply">APPLY</button>
             </div>
           </div>
         </div>
-      </div>
+
+</div>
       
     <div class="categories_content">
      

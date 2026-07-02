@@ -230,6 +230,7 @@
 
                 &.current {
                     +.accordion__content {
+                        height: auto;
                         opacity: 1;
                     }
                 }

@@ -256,19 +256,13 @@ function filterEvents() {
         const itemH = detail.clientHeight + "px";
 
         if (item.classList.contains("current")) {
+          if (!body.style.height || body.style.height === "auto") {
+            body.style.height = body.scrollHeight + "px";
+            body.offsetHeight; // force reflow
+          }
           item.classList.remove("current");
           body.style.height = "0px";
         } else {
-          const filterWrap = document.querySelector(".filter");
-          if (filterWrap) {
-            filterWrap.querySelectorAll(".accordion__header").forEach((_item) => {
-              _item.classList.remove("current");
-              const oldBody = _item
-                ?.closest(".list_accordion")
-                .querySelector(".accordion__content");
-              oldBody.style.height = "0px";
-            });
-          }
           // set current
           item.classList.add("current");
           body.style.height = itemH;

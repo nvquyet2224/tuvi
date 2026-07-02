@@ -25,15 +25,23 @@ const home_ethos = fs.readFileSync(__dirname + "/src/_home-ethos.html");
 const home_look = fs.readFileSync(__dirname + "/src/_home-look.html");
 const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
 const product_detail = fs.readFileSync(__dirname + "/src/_product-detail.html");
-const categories = fs.readFileSync(__dirname + "/src/_categories.html");
-const categories_women = fs.readFileSync(__dirname + "/src/_categories-women.html");
-const categories_citi_stroll = fs.readFileSync(__dirname + "/src/_categories-citi-stroll.html");
-const categories_men = fs.readFileSync(__dirname + "/src/_categories-men.html");
-const categories_rain_commute = fs.readFileSync(__dirname + "/src/_categories-rain-commute.html");
-const categories_kids = fs.readFileSync(__dirname + "/src/_categories-kids.html");
-const categories_nature_bound = fs.readFileSync(__dirname + "/src/_categories-nature-bound.html");
-const categories_sale = fs.readFileSync(__dirname + "/src/_categories-sale.html");
-const categories_backyard_routine = fs.readFileSync(__dirname + "/src/_categories-backyard-routine.html");
+const filter_html = fs.readFileSync(__dirname + "/src/_component-filter.html", "utf8");
+const loadCategoriesWithFilter = (filename) => {
+  let content = fs.readFileSync(path.join(__dirname, "src", filename), "utf8");
+  return content.replace(
+    /<div class="categories_content-filter">[\s\S]*?<\/div>(\s*)<div class="categories_content">/g,
+    `<div class="categories_content-filter">\n${filter_html}\n</div>$1<div class="categories_content">`
+  );
+};
+const categories = loadCategoriesWithFilter("_categories.html");
+const categories_women = loadCategoriesWithFilter("_categories-women.html");
+const categories_citi_stroll = loadCategoriesWithFilter("_categories-citi-stroll.html");
+const categories_men = loadCategoriesWithFilter("_categories-men.html");
+const categories_rain_commute = loadCategoriesWithFilter("_categories-rain-commute.html");
+const categories_kids = loadCategoriesWithFilter("_categories-kids.html");
+const categories_nature_bound = loadCategoriesWithFilter("_categories-nature-bound.html");
+const categories_sale = loadCategoriesWithFilter("_categories-sale.html");
+const categories_backyard_routine = loadCategoriesWithFilter("_categories-backyard-routine.html");
 
 const blogs = fs.readFileSync(__dirname + "/src/_blogs.html");
 const block_detail = fs.readFileSync(__dirname + "/src/_block-detail.html");

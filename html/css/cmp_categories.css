@@ -194,6 +194,7 @@
   opacity: 0;
 }
 .filter__accordion .list_accordion .accordion__header.current + .accordion__content {
+  height: auto;
   opacity: 1;
 }
 .filter__accordion .list_accordion .accordion__header .accordion__title {
