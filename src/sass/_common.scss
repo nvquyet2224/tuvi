@@ -249,11 +249,13 @@ input[type="number"] {
     z-index: 1;
     color: #fff;
     padding: f.rem(40);
+    text-align: center;
 
     h3 {
       font-size: f.rem(32);
       text-transform: uppercase;
       margin-bottom: f.rem(24);
+      font-family: "Raleway", sans-serif;
     }
   }
 

@@ -2,7 +2,7 @@
   --global-color: #c93640;
   --global-colorA: 201, 54, 64;
   --global-color-dark: #07274a;
-  --font-body: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "Afacad", sans-serif;
   --g-blue: linear-gradient(
     180deg,
     rgba(10, 124, 220, 0) 23.17%,
@@ -69,17 +69,7 @@ button {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+h2 {
   font-family: "Raleway", sans-serif;
 }
 
@@ -273,6 +263,7 @@ lottie-player {
   color: var(--global-color);
   font-weight: 700;
   font-size: 2rem;
+  line-height: 1.1;
 }
 .title_block .sub-search {
   padding-top: 1.5625rem;

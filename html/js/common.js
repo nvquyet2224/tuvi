@@ -184,9 +184,21 @@ function navClick() {
   if(side) {
     side.addEventListener("click", (e) => {
       const sideItem = e.target.closest(".side-item");
+      const dropdownToggle = e.target.closest(".dropdown-toggle");
+      const backMenu = e.target.closest(".back-menu");
+      const closeMenu = e.target.closest(".close-menu");
+
+      if (dropdownToggle && sideItem) {
+        e.preventDefault();
+        sideItem.classList.add("active");
+      }
+
+      if (backMenu && sideItem) {
+        e.preventDefault();
+        sideItem.classList.remove("active");
+      }
 
       //close menu
-      const closeMenu = e.target.closest(".close-menu");
       if (closeMenu) {
         document.querySelector(".toggle-menu").click();
       }

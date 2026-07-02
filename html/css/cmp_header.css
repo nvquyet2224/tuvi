@@ -1143,6 +1143,10 @@
   margin: 0;
   padding: 0 1rem;
 }
+.side-menu .side-item .dropdown-toggle {
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
 .side-menu .dropdown-toggle,
 .side-menu .normal-link,
 .side-menu .link-normal,
@@ -1252,6 +1256,13 @@
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+.side .dropdown-menu .push-content--item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #E4E7EC;
+}
+.side .dropdown-menu .push-content--item:last-child {
+  border-bottom: none;
 }
 .side .dropdown-menu--inner {
   padding: 0 1rem;
@@ -2009,5 +2020,78 @@
   .side .item-lv2.active .container-list {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+}
+.mega-menu {
+  display: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .nav-item.has-dropdown {
+    position: static;
+  }
+  .mega-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0.625rem);
+    width: calc(100% - 5rem);
+    max-width: 75rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 1.5rem;
+    box-shadow: 0 1.875rem 3.75rem rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+    padding: 2rem;
+  }
+  .mega-menu_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .mega-menu_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+  }
+  .mega-menu_item:hover .mega-menu_img img {
+    transform: scale(1.05);
+  }
+  .mega-menu_item:hover .mega-menu_title {
+    color: var(--global-color);
+  }
+  .mega-menu_img {
+    width: 100%;
+    aspect-ratio: 280/186;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f5f5f5;
+  }
+  .mega-menu_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .mega-menu_title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  .nav-item.has-dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translate(-50%, 0);
   }
 }

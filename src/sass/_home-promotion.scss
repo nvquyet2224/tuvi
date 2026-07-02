@@ -17,6 +17,9 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      h2 {
+        margin-bottom: f.rem(24);
+      }
     }
 
     .block-nav {
@@ -112,6 +115,9 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      h2 {
+        margin-bottom: f.rem(12);
+      }
     }
 
     &-list {

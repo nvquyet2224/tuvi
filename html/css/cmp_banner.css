@@ -120,6 +120,7 @@
 }
 .banner_detail h1 {
   margin-bottom: 11.25rem;
+  letter-spacing: -1px;
   color: #fff;
   text-transform: uppercase;
 }
@@ -145,7 +146,7 @@
     width: 100%;
   }
   .banner_wrap::before {
-    padding-top: 206.666666667%;
+    padding-top: 164.266666667%;
   }
   .banner_content .container {
     align-items: flex-end;
@@ -157,6 +158,9 @@
   .banner_detail .brief {
     font-size: 1rem;
     margin-bottom: 2rem;
+  }
+  .banner_detail .brief .link-but {
+    margin-top: 2rem;
   }
   .banner .swiper-pagination {
     bottom: 1.75rem;

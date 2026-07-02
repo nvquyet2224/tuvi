@@ -3,7 +3,7 @@
 }
 .home-purpose_top {
   position: relative;
-  background-color: var(--global-color);
+  background-color: #f1aeb1;
   overflow: hidden;
 }
 .home-purpose_top-inner {
@@ -18,10 +18,11 @@
   max-width: 47.606837607%;
 }
 .home-purpose_title {
-  color: #FF9BA2;
-  font-size: 9.375rem;
+  color: #c93640;
+  font-weight: 800;
+  font-size: 6.25rem;
   line-height: 1.1;
-  letter-spacing: -0.08em;
+  letter-spacing: -1px;
   text-transform: uppercase;
 }
 .home-purpose_info-col {
@@ -33,28 +34,23 @@
 .home-purpose_info-col .link-but {
   margin-top: auto;
   align-self: flex-start;
+  margin-bottom: 1rem;
 }
 .home-purpose_subtitle {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.4;
-  color: #ffffff;
+  color: #320002;
   margin-bottom: 1.5rem;
 }
 .home-purpose_desc {
   font-size: 1rem;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 2rem 0;
+  color: rgba(0, 0, 0, 0.66);
   font-weight: 400;
 }
 .home-purpose_bg-blob {
   position: absolute;
-  width: 33.680555556%;
-  max-width: 30.3125rem;
-  max-height: 30.3125rem;
-  background: url(../images/shape.svg) no-repeat center center;
-  background-size: 100% auto;
   z-index: 0;
   transform-origin: center;
   will-change: transform;
@@ -66,19 +62,28 @@
   display: block;
   width: 100%;
   height: auto;
-  padding-top: 100%;
 }
 .home-purpose_bg-blob-top {
-  left: -3.125rem;
-  top: -3.125rem;
-  -webkit-animation: floatBlobTop 25s infinite ease-in-out;
-  animation: floatBlobTop 25s infinite ease-in-out;
+  left: 0;
+  bottom: 0;
+  width: 32.152777778%;
+  max-width: 28.9375rem;
+  background: url(../images/purpose-left.svg) no-repeat center center;
+  background-size: 100% auto;
+}
+.home-purpose_bg-blob-top::before {
+  padding-top: 114.686825054%;
 }
 .home-purpose_bg-blob-bot {
   right: 0;
-  bottom: 0;
-  -webkit-animation: floatBlobBot 30s infinite ease-in-out;
-  animation: floatBlobBot 30s infinite ease-in-out;
+  top: 0;
+  width: 20.833333333%;
+  max-width: 18.75rem;
+  background: url(../images/purpose-right.svg) no-repeat center center;
+  background-size: 100% auto;
+}
+.home-purpose_bg-blob-bot::before {
+  padding-top: 100%;
 }
 .home-purpose_bottom {
   padding-bottom: 8.75rem;
@@ -111,13 +116,13 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .home-purpose_bg-blob {
-    position: absolute;
-    width: 11.5rem;
-    height: 11.5rem;
+  .home-purpose_bg-blob-top {
+    width: 73.866666667%;
+    max-width: initial;
   }
   .home-purpose_bg-blob-bot {
-    right: -3.125rem;
+    width: 48.8%;
+    max-width: initial;
   }
   .home-purpose_top-inner {
     display: flex;

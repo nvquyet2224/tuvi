@@ -258,6 +258,7 @@ function homePurposeSlider() {
     }
 }
 
+/*
 function homeEthosTilt() {
     var section = document.querySelector(".home-ethos");
     if (!section) return;
@@ -286,6 +287,7 @@ function homeEthosTilt() {
         card.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)";
     });
 }
+*/
 
 function homeBannerSlider() {
     if (document.querySelector(".homeBannerSlider")) {
@@ -370,7 +372,7 @@ function initProductDetail() {
     homeBestsellerSlider();
     homeWhySlider();
     homePurposeSlider();
-    homeEthosTilt();
+    // homeEthosTilt();
     initProductDetail();
 })();
 

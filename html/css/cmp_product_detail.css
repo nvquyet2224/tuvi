@@ -15,6 +15,9 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+.products_wrap .title_block h2 {
+  margin-bottom: 1.5rem;
+}
 .products_wrap .block-nav {
   display: flex;
   align-items: center;
@@ -93,6 +96,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+  }
+  .products .title_block h2 {
+    margin-bottom: 0.75rem;
   }
   .products-list {
     padding: 0 0.75rem;

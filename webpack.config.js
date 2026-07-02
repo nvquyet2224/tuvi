@@ -27,9 +27,13 @@ const home_promotion = fs.readFileSync(__dirname + "/src/_home-promotion.html");
 const product_detail = fs.readFileSync(__dirname + "/src/_product-detail.html");
 const categories = fs.readFileSync(__dirname + "/src/_categories.html");
 const categories_women = fs.readFileSync(__dirname + "/src/_categories-women.html");
+const categories_citi_stroll = fs.readFileSync(__dirname + "/src/_categories-citi-stroll.html");
 const categories_men = fs.readFileSync(__dirname + "/src/_categories-men.html");
+const categories_rain_commute = fs.readFileSync(__dirname + "/src/_categories-rain-commute.html");
 const categories_kids = fs.readFileSync(__dirname + "/src/_categories-kids.html");
+const categories_nature_bound = fs.readFileSync(__dirname + "/src/_categories-nature-bound.html");
 const categories_sale = fs.readFileSync(__dirname + "/src/_categories-sale.html");
+const categories_backyard_routine = fs.readFileSync(__dirname + "/src/_categories-backyard-routine.html");
 
 const blogs = fs.readFileSync(__dirname + "/src/_blogs.html");
 const block_detail = fs.readFileSync(__dirname + "/src/_block-detail.html");
@@ -37,9 +41,13 @@ const related_blogs = fs.readFileSync(__dirname + "/src/_component-related-blogs
 
 const sub_banner_html = fs.readFileSync(__dirname + "/src/_sub-banner.html", "utf8");
 const sub_banner_women_html = fs.readFileSync(__dirname + "/src/_sub-banner-women.html", "utf8");
+const sub_banner_citi_stroll_html = fs.readFileSync(__dirname + "/src/_sub-banner-citi-stroll.html", "utf8");
 const sub_banner_men_html = fs.readFileSync(__dirname + "/src/_sub-banner-men.html", "utf8");
+const sub_banner_rain_commute_html = fs.readFileSync(__dirname + "/src/_sub-banner-rain-commute.html", "utf8");
 const sub_banner_kids_html = fs.readFileSync(__dirname + "/src/_sub-banner-kids.html", "utf8");
+const sub_banner_nature_bound_html = fs.readFileSync(__dirname + "/src/_sub-banner-nature-bound.html", "utf8");
 const sub_banner_sale_html = fs.readFileSync(__dirname + "/src/_sub-banner-sale.html", "utf8");
+const sub_banner_backyard_routine_html = fs.readFileSync(__dirname + "/src/_sub-banner-backyard-routine.html", "utf8");
 const sub_banner_blogs_html = fs.readFileSync(__dirname + "/src/_sub-banner-blogs.html", "utf8");
 const sub_banner_block_detail_html = fs.readFileSync(__dirname + "/src/_sub-banner-block-detail.html", "utf8");
 
@@ -334,6 +342,58 @@ module.exports = {
       header: header,
       footer: footer,
       template: "src/404.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "the-citi-stroll.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      sub_banner: makeSubBanner("The City Stroll", "sub-women", sub_banner_citi_stroll_html),
+      categories: categories_citi_stroll,
+      countdown: countdown,
+      footer: footer,
+      template: "src/the-citi-stroll.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "the-rain-commute.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      sub_banner: makeSubBanner("The Rain Commute", "sub-men", sub_banner_rain_commute_html),
+      categories: categories_rain_commute,
+      countdown: countdown,
+      footer: footer,
+      template: "src/the-rain-commute.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "the-nature-bound.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      sub_banner: makeSubBanner("The Nature Bound", "sub-kid", sub_banner_nature_bound_html),
+      categories: categories_nature_bound,
+      countdown: countdown,
+      footer: footer,
+      template: "src/the-nature-bound.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "the-backyard-routine.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      sub_banner: makeSubBanner("The Backyard Routine", "sub-sale", sub_banner_backyard_routine_html),
+      categories: categories_backyard_routine,
+      countdown: countdown,
+      footer: footer,
+      template: "src/the-backyard-routine.html",
       minify: minify,
     }),
   ],
