@@ -404,6 +404,14 @@ module.exports = {
       template: "src/the-backyard-routine.html",
       minify: minify,
     }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "coming-soon.html",
+      preload: preload,
+      svg: svg,
+      template: "src/coming-soon.html",
+      minify: minify,
+    }),
   ],
   performance: {
     hints: false,
