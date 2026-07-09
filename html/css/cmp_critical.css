@@ -365,12 +365,10 @@ lottie-player {
     color: var(--global-color);
   }
 }
-@media screen and (min-width: 1024px) and (max-width: 1380px) {
+@media screen and (min-width: 1024px) {
   html {
     font-size: 1.125vw;
   }
-}
-@media screen and (min-width: 1024px) {
   .sp {
     display: none !important;
   }

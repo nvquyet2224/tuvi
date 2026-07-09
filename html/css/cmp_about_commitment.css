@@ -1,0 +1,124 @@
+.about-commitment {
+  background-color: #fff;
+  padding: 10rem 0;
+  overflow: hidden;
+}
+.about-commitment_wrap {
+  padding: 0 1.25rem;
+  margin-bottom: 4.5rem;
+}
+.about-commitment_desc {
+  font-family: var(--font-body);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000;
+  max-width: 58.125rem;
+  margin: 0 auto;
+  letter-spacing: -1px;
+  text-align: center;
+}
+.about-commitment_marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.25rem 0;
+}
+.about-commitment_marquee::before, .about-commitment_marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 7.5rem;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.about-commitment_marquee::before {
+  left: 0;
+  background: -webkit-linear-gradient(left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+  background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+.about-commitment_marquee::after {
+  right: 0;
+  background: -webkit-linear-gradient(right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+  background: linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+.about-commitment_marquee:hover .about-commitment_marquee-track {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+.about-commitment_marquee-track {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: max-content;
+  gap: 0rem;
+  -webkit-animation: marquee-scroll 25s linear infinite;
+  animation: marquee-scroll 25s linear infinite;
+}
+.about-commitment_item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 20rem;
+  height: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.about-commitment_item:hover {
+  -webkit-transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px) scale(1.02);
+}
+.about-commitment_item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+@-webkit-keyframes marquee-scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee-scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 1023px) {
+  .about-commitment {
+    padding: 3.75rem 0;
+  }
+  .about-commitment_wrap {
+    margin-bottom: 2.5rem;
+  }
+  .about-commitment_desc {
+    font-size: 1.75rem;
+  }
+  .about-commitment_item {
+    width: 8.75rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-commitment_marquee::before, .about-commitment_marquee::after {
+    width: 2.5rem;
+  }
+  .about-commitment_marquee-track {
+    gap: 0rem;
+    -webkit-animation-duration: 15s;
+    animation-duration: 15s;
+  }
+}

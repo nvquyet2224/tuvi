@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Tuvi's">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Tuvi's | About Us</title>
+    <meta name="description" content="Tuvi's About Us">
+    <meta name="keywords" content="Tuvi's, About Us">
+    <meta name="theme-color" content="#fff">
+    <meta property="og:title" content="Tuvi's | About Us">
+    <meta property="og:description" content="Tuvi's About Us">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/thumbnail.jpg">
+    <meta property="og:site_name" content="Tuvi's">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Tuvi's">
+    <link rel="icon" href="images/favicon.png">
+
+    <link href="css/cmp_reset.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_critical.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_header.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_common.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_about_travel.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_about_vision.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_about_mission.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_about_commitment.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_about_value.css" rel="preload stylesheet" as="style">
+    <link href="css/cmp_footer.css" rel="preload stylesheet" as="style">
+</head>
+
+<body data-page="about">
+    <div class="page">
+        <%= htmlWebpackPlugin.options.svg %>
+        <%= htmlWebpackPlugin.options.header %>
+        <div class="main">
+            <%= htmlWebpackPlugin.options.about_travel %>
+            <%= htmlWebpackPlugin.options.about_vision %>
+            <%= htmlWebpackPlugin.options.about_mission %>
+            <%= htmlWebpackPlugin.options.about_commitment %>
+            <%= htmlWebpackPlugin.options.about_value %>
+        </div>
+        <%= htmlWebpackPlugin.options.footer %>
+    </div>
+    <script defer src="js/common.js"></script>
+    <%= htmlWebpackPlugin.options.preload %>
+</body>
+
+</html>

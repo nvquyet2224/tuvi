@@ -58,6 +58,12 @@ const sub_banner_sale_html = fs.readFileSync(__dirname + "/src/_sub-banner-sale.
 const sub_banner_backyard_routine_html = fs.readFileSync(__dirname + "/src/_sub-banner-backyard-routine.html", "utf8");
 const sub_banner_blogs_html = fs.readFileSync(__dirname + "/src/_sub-banner-blogs.html", "utf8");
 const sub_banner_block_detail_html = fs.readFileSync(__dirname + "/src/_sub-banner-block-detail.html", "utf8");
+const sub_banner_about_html = fs.readFileSync(__dirname + "/src/_sub-banner-about.html", "utf8");
+const about_travel = fs.readFileSync(__dirname + "/src/_about-travel.html", "utf8");
+const about_vision = fs.readFileSync(__dirname + "/src/_about-vision.html", "utf8");
+const about_mission = fs.readFileSync(__dirname + "/src/_about-mission.html", "utf8");
+const about_commitment = fs.readFileSync(__dirname + "/src/_about-commitment.html", "utf8");
+const about_value = fs.readFileSync(__dirname + "/src/_about-value.html", "utf8");
 
 const countdown = fs.readFileSync(__dirname + "/src/_component-countdown.html");
 
@@ -109,6 +115,11 @@ module.exports = {
     cmp_sub_banner: ["./src/js/sub-banner.js"],
     cmp_countdown: ["./src/js/component-countdown.js"],
     cmp_block_detail: ["./src/js/block-detail.js"],
+    cmp_about_travel: ["./src/js/about-travel.js"],
+    cmp_about_vision: ["./src/js/about-vision.js"],
+    cmp_about_mission: ["./src/js/about-mission.js"],
+    cmp_about_commitment: ["./src/js/about-commitment.js"],
+    cmp_about_value: ["./src/js/about-value.js"],
   },
   output: {
     publicPath: "../",
@@ -410,6 +421,25 @@ module.exports = {
       preload: preload,
       svg: svg,
       template: "src/coming-soon.html",
+      minify: minify,
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      filename: "about.html",
+      preload: preload,
+      svg: svg,
+      header: header,
+      sub_banner: makeSubBanner("About Us", "sub-banner", sub_banner_about_html),
+      about_travel: about_travel,
+      about_vision: about_vision,
+      about_mission: about_mission,
+      about_commitment: about_commitment,
+      about_value: about_value,
+      home_why: home_why,
+      home_ethos: home_ethos,
+      home_purpose: home_purpose,
+      footer: footer,
+      template: "src/about.html",
       minify: minify,
     }),
   ],
