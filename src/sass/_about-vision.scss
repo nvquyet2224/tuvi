@@ -31,6 +31,15 @@
 
     span.grey {
       color: #98a2b3;
+
+      .reveal-word {
+        color: #98a2b3;
+        transition: color 0.4s ease;
+
+        &.active {
+          color: #000;
+        }
+      }
     }
   }
 
