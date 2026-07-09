@@ -53,6 +53,9 @@
   .about-mission_wrap {
     flex-direction: column-reverse;
   }
+  .about-mission_sub {
+    font-size: 1rem;
+  }
   .about-mission_col {
     flex: 0 0 100%;
     max-width: 100%;

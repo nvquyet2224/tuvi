@@ -18,6 +18,16 @@
   letter-spacing: -1px;
   text-align: center;
 }
+.about-commitment_desc span.grey {
+  color: #98a2b3;
+}
+.about-commitment_desc span.grey .reveal-word {
+  color: #98a2b3;
+  transition: color 0.4s ease;
+}
+.about-commitment_desc span.grey .reveal-word.active {
+  color: #000;
+}
 .about-commitment_marquee {
   width: 100%;
   overflow: hidden;

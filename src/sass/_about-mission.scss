@@ -64,7 +64,9 @@
     &_wrap {
       flex-direction: column-reverse;
     }
-
+    &_sub {
+      font-size: f.rem(16);
+    }
     &_col {
       flex: 0 0 100%;
       max-width: 100%;

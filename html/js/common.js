@@ -607,41 +607,41 @@ function initStickyWidgets() {
   }
 }
 
-function initVisionReveal() {
-  const desc = document.querySelector(".about-vision_desc span.grey");
-  if (!desc) return;
+function initTextReveal(selector) {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach((desc) => {
+    const text = desc.textContent.trim();
+    const words = text.split(/\s+/);
+    
+    desc.innerHTML = words.map(word => `<span class="reveal-word">${word}</span>`).join(" ");
 
-  const text = desc.textContent.trim();
-  const words = text.split(/\s+/);
-  
-  desc.innerHTML = words.map(word => `<span class="reveal-word">${word}</span>`).join(" ");
+    const wordSpans = desc.querySelectorAll(".reveal-word");
 
-  const wordSpans = desc.querySelectorAll(".reveal-word");
+    const handleScroll = () => {
+      const rect = desc.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
 
-  const handleScroll = () => {
-    const rect = desc.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+      // Trigger reveal as the text moves up from 85% to 35% of the viewport height
+      const start = windowHeight * 0.85;
+      const end = windowHeight * 0.35;
 
-    // Trigger reveal as the text moves up from 85% to 35% of the viewport height
-    const start = windowHeight * 0.85;
-    const end = windowHeight * 0.35;
+      let progress = (start - rect.top) / (start - end);
+      progress = Math.max(0, Math.min(1, progress));
 
-    let progress = (start - rect.top) / (start - end);
-    progress = Math.max(0, Math.min(1, progress));
+      const activeCount = Math.floor(progress * wordSpans.length);
+      wordSpans.forEach((span, index) => {
+        if (index < activeCount) {
+          span.classList.add("active");
+        } else {
+          span.classList.remove("active");
+        }
+      });
+    };
 
-    const activeCount = Math.floor(progress * wordSpans.length);
-    wordSpans.forEach((span, index) => {
-      if (index < activeCount) {
-        span.classList.add("active");
-      } else {
-        span.classList.remove("active");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleScroll);
-  handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+  });
 }
 
 (function () {
@@ -662,6 +662,7 @@ function initVisionReveal() {
   initQuickViewPopup();
   initSizeGuidePopup();
   initStickyWidgets();
-  initVisionReveal();
+  initTextReveal(".about-vision_desc span.grey");
+  initTextReveal(".about-commitment_desc span.grey");
 
 })();
